@@ -19,22 +19,24 @@ local AQ_AZERITE = " Azerit";
 local AQ_CLASSREWARDS = WHITE.." Variiert für jede Klasse"
 local AQ_RENOWN = "Ruhm";
 local AQ_WORLDDUNGEONQUEST = "Dies ist eine Weltquest.  Wenn diese Aktiv ist (Du kannst das in der Map sehen ob diese aktiv ist), betrete die Instanz.  Wenn Du die Instanz beendest, wird die Quest automatisch abgeschlossen.  Diese Quest gibt Dir Rufbelohnung und manchmal auch ein Gegenstand."
+local onlyHeroic = "Diese Quest kann nur auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden."
+local dailyHeroic = "Eine von vielen wiederholbaren Tagesquests, die bei diesem NPC verfügbar sein können (zufällig). Erfordert Schwierigkeitsgrad 'Heroisch'."
 
 local AQ_OR = GREY.." oder ";
 local AQ_AND = GREY.." und ";
-local AQ_NONE = WHITE.."Keiner";
+local AQ_NONE = WHITE.."Keine";
 
 -- Globals
 L["Quests"] = "Quests";
 L["Quest"] = "Quest";
 L["No Quests"] = "Keine Quests";
 L["Reward"] = "Belohnung";
-L["None"] = "Keiner";
+L["None"] = "Keine";
 L["Attain"] = "Benötigte Stufe";
 L["Level"] = "Stufe";
 L["Prequest"] = "Vorquest";
 L["Followup"] = "Folgequest";
-L["Start"] = "Beginnt bei/in";
+L["Start"] = "Beginnt bei";
 L["Objective"] = "Ziel";
 L["Note"] = "Informationen";
 L["Finished"] = "Abgeschlossen";
@@ -97,6 +99,7 @@ if (select(4, GetBuildInfo()) < 90000) then
 	L["Instance_36_Name"] = "Drachen der Alpträume";
 	L["Instance_37_Name"] = "Azuregos";
 	L["Instance_38_Name"] = "Highlord Kruul";
+	-- Burning Crusade Classic Instances
 	L["Instance_40_Name"] = "Höllenfeuerbollwerk";
 	L["Instance_41_Name"] = "Der Blutkessel";
 	L["Instance_42_Name"] = "Die zerschmetterten Hallen";
@@ -124,6 +127,7 @@ if (select(4, GetBuildInfo()) < 90000) then
 	L["Instance_65_Name"] = "Skettis";
 	L["Instance_67_Name"] = "Terrasse der Magister";
 	L["Instance_68_Name"] = "Sonnenbrunnenplateau";
+	-- Wrath of the Lich King Classic Instances
 	L["Instance_69_Name"] = "HdZ: Das Ausmerzen von Stratholme";
 	L["Instance_70_Name"] = "Burg Utgarde";
 	L["Instance_71_Name"] = "Turm Utgarde";
@@ -2554,11 +2558,368 @@ L["Quest_7634_Objective"] = "Hastat der Uralte hat Euch um die Beschaffung einer
 L["Quest_7634_Location"] = "Hastat der Uralte (Teufelswald - Der Eisenwald; "..YELLOW.."48,24"..WHITE..")";
 L["Quest_7634_Note"] = "Töte Azuregos um die Sehne eine ausgewachsenen blauen Drachens zu erhalten. Er wandert um die Mitte der südlichen Halbinsel in Azshara in der Nähe von "..YELLOW.."[1]"..WHITE..".";
 L["Quest_7634_RewardText"] = WHITE.."1";
-L["Quest_7634_PreQuest"] = "Das uralte Blatt ("..YELLOW.."Molten Core"..WHITE..")";
+L["Quest_7634_PreQuest"] = "Das uralte Blatt ("..YELLOW.."Geschmolzener Kern"..WHITE..")";
 
--- Burning Crusade Classic Quests
+-------------------------------------------
+----- Burning Crusade Classic Quests ------
+-------------------------------------------
 
--- Other Classic Quests
+-- [40] Hellfire Ramparts (Höllenfeuerbollwerk)
+L["Quest_9575_Name"] = "Die Bollwerke schwächen"; -- Alliance
+L["Quest_9575_Objective"] = "Tötet den Wachhabenden Gargolmar, Omor den Narbenlosen und Nazan, den Drachen. Bringt Gargolmars Hand, Omors Huf und Nazans Kopf zu Gunny in der Ehrenfeste auf der Höllenfeuerhalbinsel.";
+L["Quest_9575_Location"] = "Leutnant Chadwick (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."56.6, 66.4"..PREV..")";
+L["Quest_9575_Note"] = "Gargolmar befindet sich bei "..YELLOW.."[1]"..PREV..", Omor bei "..YELLOW.."[2]"..PREV.." und Nazan bei "..YELLOW.."[3]"..PREV..".\nGunny befindet sich bei "..YELLOW.."56.4, 66.6"..PREV..".\n\n(Hier muss noch Info bzgl. der Pre-Quest rein!) To get this quest, you must complete „Schwarze Magie“, which starts with „Den Feind kennen“ from Force Commander Dannath Trollbane (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."56.6, 66.6"..PREV..").";
+L["Quest_9575_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+L["Quest_9575_PreQuest"] = "Wiedergeburt der Brennenden Legion -> Expeditionsposten";
+L["Quest_9575_FollowQuest"] = "Im Herzen des Hasses ("..YELLOW.."Der Blutkessel"..PREV..")";
+
+L["Quest_9587_Name"] = "Düstere Neuigkeiten"; -- Alliance
+L["Quest_9587_Objective"] = "Bringt den unheilvollen Brief zu Truppenkommandant Danath Trollbann in der Ehrenfeste auf der Höllenfeuerhalbinsel.";
+L["Quest_9587_Location"] = "Unheilvoller Brief (droppt von Vazruden der Herold; "..YELLOW.."[3]"..PREV..")";
+L["Quest_9587_Note"] = "Truppenkommandant Danath Trollbann befindet sich bei "..YELLOW.."56.6, 66.6"..PREV..".";
+L["Quest_9587_RewardText"] = AQ_NONE;
+L["Quest_9587_FollowQuest"] = "Blut bedeutet Leben ("..YELLOW.."Der Blutkessel"..PREV..")";
+
+L["Quest_11354_Name"] = "Gesucht: Nazans Reitgerte";
+L["Quest_11354_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Nazans Reitgerte zu beschaffen. Bringt sie zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
+L["Quest_11354_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0, 36.8"..PREV..")";
+L["Quest_11354_Note"] = dailyHeroic.."\n\nNazan ist der letzte Boss des Dungeons und befindet sich bei "..YELLOW.."[3]"..PREV..".";
+L["Quest_11354_RewardText"] = WHITE.."1(x2)";
+
+L["Quest_9572_Name"] = "Die Bollwerke schwächen"; -- Horde
+L["Quest_9572_Objective"] = "Tötet den Wachhabenden Gargolmar, Omor den Narbenlosen und Nazan, den Drachen. Bringt Gargolmars Hand, Omors Huf und Nazans Kopf zu Caza'rez in Thrallmar auf der Höllenfeuerhalbinsel.";
+L["Quest_9572_Location"] = "Steinwache Stok'ton (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."55.2, 36.0"..PREV..")";
+L["Quest_9572_Note"] = "Gargolmar befindet sich bei "..YELLOW.."[1]"..PREV..", Omor bei "..YELLOW.."[2]"..PREV.." und Nazan bei "..YELLOW.."[3]"..PREV..".\n\nCaza'rez befindet sich bei "..YELLOW.."54.8, 36.0"..PREV..").\n\nTo get this quest, you must complete 'Forward Base: Reaver's Fall', which starts with the 'Through the Dark Portal' quest you receive at the Dark Portal in Blasted Lands.";
+L["Quest_9572_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+L["Quest_9572_PreQuest"] = "Durch das Dunkle Portal -> Vorposten: Häschersturz";
+L["Quest_9572_FollowQuest"] = "Im Herzen des Hasses ("..YELLOW.."Der Blutkessel"..PREV..")";
+
+L["Quest_9588_Name"] = "Düstere Neuigkeiten"; -- Horde
+L["Quest_9588_Objective"] = "Bringt den unheilvollen Brief zu Nazgrel in Thrallmar auf der Höllenfeuerhalbinsel.";
+L["Quest_9588_Location"] = "Unheilvoller Brief (droppt von Vazruden der Herold; "..YELLOW.."[3]"..PREV..")";
+L["Quest_9588_Note"] = "Nazgrel befindet sich bei "..YELLOW.."55.0, 36.0"..PREV..".";
+L["Quest_9588_RewardText"] = AQ_NONE;
+L["Quest_9588_FollowQuest"] = "Blut bedeutet Leben ("..YELLOW.."Der Blutkessel"..PREV..")";
+
+-- [41] The Blood Furnace (Der Blutkessel)
+L["Quest_9589_Name"] = "Blut bedeutet Leben"; -- Alliance
+L["Quest_9589_Objective"] = "Sammelt 10 Phiolen mit Höllenorcblut und bringt sie zu Gunny in der Ehrenfeste auf der Höllenfeuerhalbinsel.";
+L["Quest_9589_Location"] = "Gunny (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."56.4, 66.6"..PREV..")";
+L["Quest_9589_Note"] = "Die Phiolen mit Blut können von allen Orcs im Blutkessel gedroppt werden.";
+L["Quest_9589_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+L["Quest_9589_PreQuest"] = "Düstere Neuigkeiten ("..YELLOW.."Höllenfeuerbollwerk"..PREV..")";
+
+L["Quest_9607_Name"] = "Im Herzen des Hasses"; -- Alliance
+L["Quest_9607_Objective"] = "Untersucht das gesamte Areal des Blutkessels und meldet Euch anschließend bei Truppenkommandant Danath Trollbann in der Ehrenfeste auf der Höllenfeuerhalbinsel.";
+L["Quest_9607_Location"] = "Gunny (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."56.4, 66.6"..PREV..")";
+L["Quest_9607_Note"] = "Die Quest wird automatisch im Raum mit dem letzten Boss abgeschlossen.\n\nTruppenkommandant Danath Trollbann befindet sich bei "..YELLOW.."56.6, 66.6"..PREV..".";
+L["Quest_9607_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3";
+L["Quest_9607_PreQuest"] = "Die Bollwerke schwächen ("..YELLOW.."Höllenfeuerbollwerk"..PREV..")";
+
+L["Quest_11362_Name"] = "Gesucht: Keli'dans gefiederter Stab";
+L["Quest_11362_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Keli'dans gefiederten Stab zu beschaffen. Bringt ihn zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
+L["Quest_11362_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0, 36.8"..PREV..")";
+L["Quest_11362_Note"] = dailyHeroic.."\n\nKeli'dan der Zerstörer befindet sich bei "..YELLOW.."[3]"..PREV..".";
+L["Quest_11362_RewardText"] = WHITE.."1(x2)";
+
+L["Quest_9590_Name"] = "Blut bedeutet Leben"; -- Horde
+L["Quest_9590_Objective"] = "Sammelt 10 Phiolen mit Höllenorcblut und bringt sie zu Zenturio Caza'rez in Thrallmar auf der Höllenfeuerhalbinsel.";
+L["Quest_9590_Location"] = "Caza'rez (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."54.8, 36.0"..PREV..")";
+L["Quest_9590_Note"] = "Die Phiolen mit Blut können von allen Orcs im Blutkessel gedroppt werden.";
+L["Quest_9590_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+L["Quest_9590_PreQuest"] = "Düstere Neuigkeiten ("..YELLOW.."Höllenfeuerbollwerk"..PREV..")";
+
+L["Quest_9608_Name"] = "Im Herzen des Hasses"; -- Horde
+L["Quest_9608_Objective"] = "Untersucht das gesamte Areal des Blutkessels und meldet Euch anschließend bei Nazgrel in Thrallmar auf der Höllenfeuerhalbinsel.";
+L["Quest_9608_Location"] = "Caza'rez (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."54.8, 36.0"..PREV..")";
+L["Quest_9608_Note"] = "Die Quest wird automatisch im Raum mit dem letzten Boss abgeschlossen.\n\nNazgrel befindet sich bei "..YELLOW.."55.0, 36.0"..PREV..".";
+L["Quest_9608_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3";
+L["Quest_9608_PreQuest"] = "Die Bollwerke schwächen ("..YELLOW.."Höllenfeuerbollwerk"..PREV..")";
+
+-- [42] The Shattered Halls (Die Zerschmetterten Hallen)
+L["Quest_9494_Name"] = "Teufelsglut";
+L["Quest_9494_Objective"] = "Magus Zabraxis in der Ehrenfeste möchte, dass Ihr ihr ein Stück Teufelsglut bringt.";
+L["Quest_9494_Location"] = "Magus Zabraxis (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."54, 66"..PREV..")";
+L["Quest_9494_Note"] = "After killing Großhexenmeister Nethekurse bei "..YELLOW.."[2]"..PREV..", he'll drop an Amulet. Use the amulet at one of the braziers near his throne to get the Fel Ember.";
+L["Quest_9494_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4"..AQ_OR..PREV.."5";
+
+L["Quest_9493_Name"] = "Der Stolz der Höllenhorde"; -- Alliance
+L["Quest_9493_Objective"] = "Feldkommandeur Romus in der Ehrenfeste möchte, dass Ihr 8 Legionäre der Zerschmetterten Hand, 4 Zenturios der Zerschmetterten Hand und 4 Champions der Zerschmetterten Hand tötet.";
+L["Quest_9493_Location"] = "Feldkommandeur Romus (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."57, 63"..PREV..")";
+L["Quest_9493_Note"] = "You'll find the Centurions in Sparring Hall.";
+L["Quest_9493_RewardText"] = AQ_NONE;
+
+L["Quest_9492_Name"] = "Das Schicksal wenden";
+L["Quest_9492_Objective"] = "Bringt Kriegshäuptling Kargaths Faust zu Truppenkommandant Danath Trollbann in der Ehrenfeste.";
+L["Quest_9492_Location"] = "Truppenkommandant Danath Trollbann (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."57, 67"..PREV..")";
+L["Quest_9492_Note"] = "Kriegshäuptling Kargath Messerfaust befindet sich bei "..YELLOW.."[5]"..PREV..".";
+L["Quest_9492_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+
+L["Quest_9524_Name"] = "Gefangene der Zitadelle"; -- Alliance
+L["Quest_9524_Objective"] = "Rettet Hauptmann Alina aus der Höllenfeuerzitadelle, bevor sie hingerichtet wird.";
+L["Quest_9524_Location"] = "Randy Sauseritzel (Die Zerschmetterten Hallen; "..YELLOW.."Heroisch [1]"..PREV..")";
+L["Quest_9524_Note"] = onlyHeroic.."\n\nHauptmann Alina befindet sich bei "..YELLOW.."[5]"..PREV..". Timer with 55 minutes starts at the beginning of the Archer event.";
+L["Quest_9524_RewardText"] = AQ_NONE;
+
+L["Quest_10884_Name"] = "Die Prüfung der Naaru: Erbarmen";
+L["Quest_10884_Objective"] = "A'dal in Shattrath möchte, dass Ihr die unbenutzte Axt des Henkers aus den Zerschmetterten Hallen der Höllenfeuerzitadelle besorgt.";
+L["Quest_10884_Location"] = "A'dal (Shattrath - Terrasse des Lichts; "..YELLOW.."54.6, 44.6"..PREV..")";
+L["Quest_10884_Note"] = onlyHeroic; -- "\n\nDiese Quest wurde benötigt, um die Festung der Stürme zu betreten, ist aber nicht mehr nötig."		it IS needed in TBC Classic
+L["Quest_10884_RewardText"] = AQ_NONE;
+L["Quest_10884_PreQuest"] = "The Hand of Guldan -> The Cipher of Damnation";
+L["Quest_10884_FollowQuest"] = "Die Prüfung der Naaru: Magtheridon";
+
+L["Quest_10670_Name"] = "Träne der Erdenmutter";
+L["Quest_10670_Objective"] = "Besorgt die Träne der Erdenmutter von Kriegshetzer O'mrogg und bringt sie zu David Wayne in Waynes Zuflucht.";
+L["Quest_10670_Location"] = "David Wayne (Wälder von Terokkar - Waynes Zuflucht; "..YELLOW.."78, 39"..PREV..").";
+L["Quest_10670_Note"] = "Kriegshetzer O'mrogg befindet sich bei "..YELLOW.."[4]"..PREV..".\n\nDer Gegenstand droppt sowohl im normalen als auch im heroischen Modus.";
+L["Quest_10670_RewardText"] = AQ_NONE;
+L["Quest_10670_PreQuest"] = "Frisch von der Mechanar ("..YELLOW.."Die Mechanar"..PREV..") & The Lexicon Demonica ("..YELLOW.."Schattenlabyrinth"..PREV..")";
+L["Quest_10670_FollowQuest"] = "Bane of the Illidari";
+
+L["Quest_9637_Name"] = "Kalynnas Bitte";
+L["Quest_9637_Objective"] = "Kalynna Lathred möchte, dass Ihr den Dämmerfolianten vom Großhexenmeister Nethekurse in den Zerschmetterten Hallen der Höllenfeuerzitadelle und das Buch der vergessenen Namen von Dunkelwirker Syth in den Sethekkhallen in Auchindoun besorgt.";
+L["Quest_9637_Location"] = "Kalynna Lathred (Netherstorm - Area 52; "..YELLOW.."32, 63"..PREV..")";
+L["Quest_9637_Note"] = onlyHeroic;
+L["Quest_9637_RewardText"] = AQ_NONE;
+L["Quest_9637_PreQuest"] = "Hilfe unter Kollegen";
+L["Quest_9637_FollowQuest"] = "Schrecken der Nacht";
+
+L["Quest_11363_Name"] = "Gesucht: Messerfausts Siegel";
+L["Quest_11363_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Messerfausts Siegel zu beschaffen. Bringt es zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
+L["Quest_11363_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0, 36.8"..PREV..")";
+L["Quest_11363_Note"] = onlyHeroic.."\n\nKriegshäuptling Kargath Messerfaust befindet sich "..YELLOW.."[5]"..PREV..".";
+L["Quest_11363_RewardText"] = WHITE.."1(x2)";
+
+L["Quest_11364_Name"] = "Gesucht: Zenturionen der Zerschmetterten Hand";
+L["Quest_11364_Objective"] = "Netherpirscher Mah'duun hat Euch damit beauftragt, 4 Zenturionen der Zerschmetterten Hand zu töten. Kehrt erst zu ihm in das untere Viertel in Shattrath zurück, wenn sie alle dem Tod überantwortet wurden.";
+L["Quest_11364_Location"] = "Netherpirscher Mah'duun (Shattrath - Unteres Viertel; "..YELLOW.."75.2, 37.6"..PREV..")";
+L["Quest_11364_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
+L["Quest_11364_RewardText"] = WHITE.."1";
+
+L["Quest_10754_Name"] = "Zugang zur Zitadelle"; -- Alliance
+L["Quest_10754_Objective"] = "Bringt die präparierte Schlüsselform zu Truppenkommandant Danath in der Ehrenfeste auf der Höllenfeuerhalbinsel.";
+L["Quest_10754_Location"] = "Präparierte Schlüsselform (droppt von Schmied Gorlunk im Schattenmondtal - Terrasse von Ata'mal; "..YELLOW.."68, 36"..PREV..")";
+L["Quest_10754_Note"] = "The Smith that drops the Primed Key Mold is easily soloable and very easily reachable with a flying mount.\n\nForce Commander Danath is at (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."57,67"..PREV.."). He sends you to Grand Master Dumphry for the next part of the quest at (Höllenfeuerhalbinsel - Ehrenfeste; "..YELLOW.."51,60"..PREV..")...";
+L["Quest_10754_RewardText"] = WHITE.."1";
+L["Quest_10754_FollowQuest"] = "Großmeister Dumphry -> Heißer als die Hölle";
+
+L["Quest_9496_Name"] = "Der Stolz der Höllenhorde"; -- Horde
+L["Quest_9496_Objective"] = "Shadow Hunter Ty'jin at Thrallmar wants you to kill 8 Shattered Hand Legionnaires, 4 Shattered Hand Centurions and 4 Shattered Hand Champions.";
+L["Quest_9496_Location"] = "Shadow Hunter Ty'jin (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."55, 36"..PREV..")";
+L["Quest_9496_Note"] = "You'll find the Centurion's in Sparring Hall.";
+L["Quest_9496_RewardText"] = AQ_NONE;
+
+L["Quest_9495_Name"] = "Der Wille des Kriegshäuptlings";
+L["Quest_9495_Objective"] = "Bringt Kriegshäuptling Kargaths Faust zu Nazgrel in Thrallmar.";
+L["Quest_9495_Location"] = "Nazgrel (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."55, 36"..PREV..")";
+L["Quest_9495_Note"] = "Kriegshäuptling Kargath Messerfaust befindet sich bei "..YELLOW.."[5]"..PREV..".";
+L["Quest_9495_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+
+L["Quest_9525_Name"] = "Gefangene der Zitadelle"; -- Horde
+L["Quest_9525_Objective"] = "Rescue Captain Boneshatter inside Hellfire Citadel before he is executed.";
+L["Quest_9525_Location"] = "Drisella (Shattered Halls; "..YELLOW.."Heroisch [1]"..PREV..")";
+L["Quest_9525_Note"] = onlyHeroic.."\n\nDrisella is at "..YELLOW.."[5]"..PREV..". Timer with 55 minutes starts at the beginning of the Archer event.";
+L["Quest_9525_RewardText"] = AQ_NONE;
+
+L["Quest_10755_Name"] = "Zugang zur Zitadelle"; -- Horde
+L["Quest_10755_Objective"] = "Bringt die präparierte Schlüsselform zu Truppenkommandant Nazgrel in Thrallmar auf der Höllenfeuerhalbinsel.";
+L["Quest_10755_Location"] = "Präparierte Schlüsselform (droppt von Schmied Gorlunk im Schattenmondtal - Terrasse von Ata'mal; "..YELLOW.."68, 36"..PREV..")";
+L["Quest_10755_Note"] = "The Smith that drops the Primed Key Mold is easily soloable and very easily reachable with a flying mount.\n\nNazgrel is at (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."55,36"..PREV.."). He sends you to Grand Master Rohok for the next part of the quest at (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."53,38"..PREV..")...";
+L["Quest_10755_RewardText"] = WHITE.."1";
+L["Quest_10755_FollowQuest"] = "Großmeister Rohok -> Heißer als die Hölle";
+
+-- [43] Magtheridon's Lair (Magtheridons Kammer)
+L["Quest_10888_Name"] = "Die Prüfung der Naaru: Magtheridon";
+L["Quest_10888_Objective"] = "A'dal in Shattrath möchte, dass Ihr Magtheridon vernichtet.";
+L["Quest_10888_Location"] = "A'dal (Shattrath - Terrasse des Lichts; "..YELLOW.."54.6, 44.6"..PREV..")";
+L["Quest_10888_Note"] = "Die drei anderen Prüfungen der Naaru, die es von A'dal gibt, müssen absolviert sein.\n\nDiese Quest wurde benötigt, um die Festung der Stürme zu betreten, ist aber nicht mehr nötig.";
+L["Quest_10888_RewardText"] = WHITE.."1";
+L["Quest_10888_PreQuest"] = "Die Prüfung der Naaru: Zuverlässigkeit, Erbarmen und Stärke";
+
+L["Quest_11002_Name"] = "Magtheridons Untergang"; -- Alliance
+L["Quest_11002_Objective"] = "Bringt Magtheridons Kopf zu Truppenkommandant Danath Trollbann in der Ehrenfeste auf der Höllenfeuerhalbinsel zurück.";
+L["Quest_11002_Location"] = "Magtheridons Kopf (droppt von Magtheridon; "..YELLOW.."[1]"..PREV..")";
+L["Quest_11002_Note"] = "Nur eine Person im Schlachtzug kann den Kopf erhalten, um die Quest zu starten. Truppenkommandant Danath Trollbann befindet sich bei "..YELLOW.."56.6, 66.6"..PREV..".";
+L["Quest_11002_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+
+L["Quest_11003_Name"] = "Magtheridons Untergang"; -- Horde
+L["Quest_11003_Objective"] = "Bringt Magtheridons Kopf zu Nazgrel in Thrallmar auf der Höllenfeuerhalbinsel.";
+L["Quest_11003_Location"] = "Magtheridons Kopf (droppt von Magtheridon; "..YELLOW.."[1]"..PREV..")";
+L["Quest_11003_Note"] = "Nur eine Person im Schlachtzug kann den Kopf erhalten, um die Quest zu starten.\n\nNazgrel befindet sich bei "..YELLOW.."55.0, 36.0"..PREV..".";
+L["Quest_11003_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+
+-- [44] The Slave Pens (Die Sklavenunterkünfte)
+L["Quest_9738_Name"] = "Bei der Arbeit verschollen";
+L["Quest_9738_Objective"] = "Findet heraus, was mit Erdbinder Rayge, Naturalist Biss, Jäter Gründaum und Windrufer Klaue geschehen ist. Kehrt dann zu Behüterin Jhang im Echsenkessel in den Zangarmarschen zurück.";
+L["Quest_9738_Location"] = "Behüterin Jhang (Der Echsenkessel - Eingang; "..YELLOW.."52, 36"..PREV..")";
+L["Quest_9738_Note"] = "Jäter Gründaum und Naturalist Biss befinden sich in den "..YELLOW.."Sklavenunterkünften"..PREV.." an den Positionen "..YELLOW.."[2]"..PREV.." und "..YELLOW.."[5]"..PREV..". Erdbinder Rayge und Windrufer Klaue sind im "..YELLOW.."Tiefensumpf"..PREV.." an Position "..YELLOW.."[3]"..PREV.." und "..YELLOW.."[4]"..PREV.." zu finden.\n\nBehüterin Jhang steht in der Unterwasserhöhle neben dem Versammlungsstein.";
+L["Quest_9738_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3";
+L["Quest_9738_PreQuest"] = "Kanalisationspläne -> Fehlgeschlagene Operation (optional)";
+
+L["Quest_11368_Name"] = "Gesucht: Das Herz von Quagmirran";
+L["Quest_11368_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm das Herz von Quagmirran zu beschaffen. Bringt es zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
+L["Quest_11368_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0, 36.8"..PREV..")";
+L["Quest_11368_Note"] = dailyHeroic.."\n\nQuagmirran befindet sich bei "..YELLOW.."[3]"..PREV..".";
+L["Quest_11368_RewardText"] = WHITE.."1(x2)";
+
+L["Quest_10901_Name"] = "Der Knüppel von Kar'desh";
+L["Quest_10901_Objective"] = "Nar'biss der Ketzer in den heroischen Sklavenunterkünften des Echsenkessels möchte, dass Ihr ihm das Erdensiegel und das Flammensiegel bringt.";
+L["Quest_10901_Location"] = "Nar'biss der Ketzer (Sklavenunterkünfte; "..YELLOW.."Heroisch [3]"..PREV..")";
+L["Quest_10901_Note"] = "Das Erdensiegel droppt von Gruul in "..YELLOW.."Gruuls Unterschlupf"..PREV..", und das Flammensiegel droppt von Schrecken der Nacht in "..YELLOW.."Karazhan [5]"..PREV..".";
+L["Quest_10901_RewardText"] = AQ_NONE;
+
+L["Quest_11955_Name"] = "Ahune der Frostfürst";
+L["Quest_11955_Objective"] = "Begebt Euch in die Sklavenunterkünfte im Echsenkessel in den Zangarmarschen und sprecht mit Numa Wolkenschwester.";
+L["Quest_11955_Location"] = "Urahne des Irdenen Rings (kann während des Events in allen großen Städten gefunden werden)";
+L["Quest_11955_Note"] = "Numa Wolkenschwester befindet sich direkt am Eingang zu den Sklavenunterkünften.\n\nDiese Quest ist nur während des Sonnenwendfest-Events verfügbar. Sie ist nicht erforderlich, um Ahune beschwören zu können.";
+L["Quest_11955_RewardText"] = AQ_NONE;
+L["Quest_11955_PreQuest"] = "Ungewöhnliche Aktivitäten -> Den Urahnen benachrichtigen";
+L["Quest_11955_FollowQuest"] = "Ahune ist hier!";
+
+L["Quest_11696_Name"] = "Ahune ist hier!";
+L["Quest_11696_Objective"] = "Findet Luma Himmelsmutter in den Sklavenunterkünften.";
+L["Quest_11696_Location"] = "Numa Wolkenschwester (Die Sklavenunterkünfte; "..YELLOW.."direkt am Portal"..PREV..")";
+L["Quest_11696_Note"] = "Luma Himmelsmutter hält sich in der Nähe von "..YELLOW.."[1]"..PREV.." auf. Es müssen keine der anderen Event-Quests abgeschlossen werden, um diese Quest zu erhalten. Die Prequest ist optional.";
+L["Quest_11696_RewardText"] = AQ_NONE;
+L["Quest_11696_PreQuest"] = "Ahune der Frostfürst (optional)";
+L["Quest_11696_FollowQuest"] = "Beschwört Ahune";
+
+L["Quest_11691_Name"] = "Beschwört Ahune";
+L["Quest_11691_Objective"] = "Bringt dieses Magmatotem des Irdenen Rings zum Eisbrocken.";
+L["Quest_11691_Location"] = "Luma Himmelsmutter (Die Sklavenunterkünfte; "..YELLOW.."in der Nähe von [1]"..PREV..")";
+L["Quest_11691_Note"] = "Der Eisbrocken befindet sich in kurzer Entfernung zu Luma Himmelsmutter. Durch Abschluss dieser Quest wird Ahune bei "..YELLOW.."[1]"..PREV.." beschwört. Kann pro Charakter einmal täglich wiederholt werden.";
+L["Quest_11691_RewardText"] = AQ_NONE;
+L["Quest_11691_PreQuest"] = "Ahune ist hier!";
+
+L["Quest_11972_Name"] = "Splitter von Ahune";
+L["Quest_11972_Objective"] = "Bringt die Eissplitter zu Luma Himmelsmutter.";
+L["Quest_11972_Location"] = "Splitter von Ahune (kann aus der Eiskiste gelootet werden, nachdem Ahune der Frostfürst getötet wurde)";
+L["Quest_11972_Note"] = "Diese Quest ist nur während des Sonnenwendfest-Events verfügbar. Das Item droppt für jeden Charakter nur einmal.\n\nLuma Himmelsmutter hält sich in der Nähe von "..YELLOW.."[1]"..PREV.." auf.";
+L["Quest_11972_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_AND..PREV.."3(x20)";
+
+-- [45] The Steamvault (Die Dampfkammer)
+L["Quest_9763_Name"] = "Das Versteck des Kriegsherren";
+L["Quest_9763_Objective"] = "Behüterin Jhang möchte, dass Ihr Kriegsherr Kalithresh im Echsenkessel findet und tötet.";
+L["Quest_9763_Location"] = "Behüterin Jhang (Der Echsenkessel; "..YELLOW.."[1]"..PREV.." auf der Eingangskarte)";
+L["Quest_9763_Note"] = "Behüterin Jhang steht in der Unterwasserhöhle neben dem Versammlungsstein. Kriegsherr Kalithresh befindet sich bei "..YELLOW.."[4]"..PREV..". Make sure to destroy the Tanks when Kalithresh uses them.";
+L["Quest_9763_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+
+L["Quest_9764_Name"] = "Befehle von Lady Vashj";
+L["Quest_9764_Objective"] = "Bringt die Befehle von Lady Vashj zu Ysiel Windsänger in der Zuflucht des Cenarius in den Zangarmarschen.";
+L["Quest_9764_Location"] = "Befehle von Lady Vashj (zufälliger Drop in der Dampfkammer)";
+L["Quest_9764_Note"] = "Ysiel Windsänger befindet sich bei "..YELLOW.."78.4, 62.0"..PREV..".\nDie Folgequest ermöglicht es, Waffen des Echsenkessels für Rufpunkte bei der Expedition des Cenarius abzugeben. Coilfang Armaments are randomly dropped from Steamvaults and Serpentshrine Cavern and can be collected (but not turned in) before you do this quest. They do not bind, so they can be traded or bought from other players.";
+L["Quest_9764_RewardText"] = AQ_NONE;
+L["Quest_9764_FollowQuest"] = "Kriegsvorbereitungen";
+
+-- [46] The Underbog (Der Tiefensumpf)
+L["Quest_9717_Name"] = "Los geht's!";
+L["Quest_9717_Objective"] = "Besorgt einen Tiefensporenfarn und bringt ihn zu T'shu in Sporeggar in den Zangarmarschen.";
+L["Quest_9717_Location"] = "T'shu (Zangarmarschen - Sporeggar; "..YELLOW.."19.4, 49.7"..PREV..")";
+L["Quest_9717_Note"] = "Dein Ruf bei den Sporeggar muss auf 'Neutral' sein, um diese Quest annehmen zu können. Die Tiefenspore steht direkt hinter Hungarfenn an Position "..YELLOW.."[1]"..PREV..".";
+L["Quest_9717_RewardText"] = WHITE.."1";
+
+L["Quest_9719_Name"] = "Tötet die Mutter";
+L["Quest_9719_Objective"] = "Bringt das Gehirn der Schattenmutter zu Khn'nix in Sporeggar in den Zangarmarschen.";
+L["Quest_9719_Location"] = "Khn'nix (Zangarmarschen - Sporeggar; "..YELLOW.."19.6, 49.7"..PREV..")";
+L["Quest_9719_Note"] = "Dein Ruf bei den Sporeggar muss auf 'Neutral' sein, um diese Quest annehmen zu können. Die Schattenmutter "..YELLOW.."[5]"..PREV.." ist der letzte Boss.";
+L["Quest_9719_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2";
+
+L["Quest_11369_Name"] = "Gesucht: Ei der Schattenmutter";
+L["Quest_11369_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm ein Ei der Schattenmutter zu beschaffen. Bringt es zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
+L["Quest_11369_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0, 36.8"..PREV..")";
+L["Quest_11369_Note"] = dailyHeroic.."\n\nDie Schattenmutter befindet sich bei "..YELLOW.."[5]"..PREV..".";
+L["Quest_11369_RewardText"] = WHITE.."1(x2)"; -- different from Retail
+
+L["Quest_9715_Name"] = "Bringt mir ein Gebüsch!";
+L["Quest_9715_Objective"] = "Sammelt 5 Stück Bluthibiskus und bringt sie zu Gzhun'tt in Sporeggar in den Zangarmarschen.";
+L["Quest_9715_Location"] = "Gzhun'tt (Zangarmarschen - Sporeggar; "..YELLOW.."19.5, 50.0"..PREV..")";
+L["Quest_9715_Note"] = "Dein Ruf bei den Sporeggar muss auf 'Freundlich' sein, um diese Quest annehmen zu können. The Sanguine Hibiscus are scattered throughout Underbog near plants and also drop off of Bog mobs, including those in Steamvault. They are also tradeable and can be found on the Auction House.";
+L["Quest_9715_RewardText"] = AQ_NONE;
+L["Quest_9715_FollowQuest"] = "Bringt mir ein weiteres Gebüsch!";
+
+L["Quest_9714_Name"] = "Bringt mir ein weiteres Gebüsch!";
+L["Quest_9714_Objective"] = "Wir können immer noch mehr Bluthibiskus von den Schlurfern, Sumpfriesen und Tiefenfledermäusen im Echsenkessel gebrauchen. Bringt sie mir in Bündeln zu je fünf, und ich werde Euch sehr dankbar sein.";
+L["Quest_9714_Location"] = "Gzhun'tt (Zangarmarschen - Sporeggar; "..YELLOW.."19.5, 50.0"..PREV..")";
+L["Quest_9714_Note"] = "Dein Ruf bei den Sporeggar muss auf 'Freundlich' sein, um diese Quest annehmen zu können. Die Quest ist wiederholbar und gibt jedes mal 750 Rufpunkte bei den Sporeggar.\n\nDie Bluthibisken kann man im Tiefensupf gelegentlich am Wegesrand in der Nähe von anderen Pflanzen finden. Außerdem können sie von den Sumpfgegnern (auch in der Dampfkammer) fallen gelassen werden. Sie sind handelbar und können im Auktionshaus gekauft werden.";
+L["Quest_9714_RewardText"] = AQ_NONE;
+L["Quest_9714_PreQuest"] = "Bringt mir ein Gebüsch!";
+
+-- [47] Auchenai Crypts (Auchenaikrypta)
+L["Quest_10164_Name"] = "Alles wird gut";
+L["Quest_10164_Objective"] = "Großvater Aldrimus außerhalb der Auchenaikrypta von Auchindoun möchte, dass Ihr in die Auchenaikrypta geht und Exarch Maladaar vernichtet.";
+L["Quest_10164_Location"] = "Großvater Aldrimus (Auchindoun; "..YELLOW.."[1]"..PREV.." auf der Eingangskarte)";
+L["Quest_10164_Note"] = "Exarch Maladaar befindet sich bei "..YELLOW.."[2]"..PREV..". Die Prequest-Reihe startet bei Ha'lei (Auchindoun; "..YELLOW.."[1]"..PREV.." auf der Eingangskarte).";
+L["Quest_10164_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+L["Quest_10164_PreQuest"] = "Ich sehe tote Draenei -> Levixus der Seelenrufer";
+
+L["Quest_11374_Name"] = "Gesucht: Der Seelenedelstein des Exarchen";
+L["Quest_11374_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm den Seelenedelstein des Exarchen zu beschaffen. Bringt diesen zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
+L["Quest_11374_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0, 36.8"..PREV..")";
+L["Quest_11374_Note"] = dailyHeroic.."\n\nExarch Maladaar befindet sich bei "..YELLOW.."[2]"..PREV..".";
+L["Quest_11374_RewardText"] = WHITE.."1(x2)";
+
+L["Quest_10167_Name"] = "Auchindoun...";
+L["Quest_10167_Objective"] = "Reist zur Auchenaikrypta in der Knochenwüste der Wälder von Terokkar und tötet Exarch Maladaar, um den Geist von D'ore zu befreien.";
+L["Quest_10167_Location"] = "A'dal (Shattrath - Terrasse des Lichts; "..YELLOW.."54.6, 44.6"..PREV..")";
+L["Quest_10167_Note"] = "Exarch Maladaar ist bei "..YELLOW.."[2]"..PREV..". D'ore erscheint, wenn Exarch Maladaar getötet wurde.";
+L["Quest_10167_RewardText"] = AQ_NONE;
+L["Quest_10167_PreQuest"] = "Ein Besuch bei der Großmutter -> Ein gelüftetes Geheimnis";
+L["Quest_10167_FollowQuest"] = "Was die Seele sieht";
+
+L["Quest_10168_Name"] = "Was die Seele sieht";
+L["Quest_10168_Objective"] = "Sucht einen Seelenspiegel in der Auchenaikrypta und benutzt ihn, um einen getrübten Geist eines uralten Orcahnen von Nagrand zu rufen. Zerstört 15 getrübte Geister, damit die Ahnen in Frieden ruhen können. Kehrt zu Mutter Kashur im Ahnengrund zurück, wenn Ihr fertig seid.";
+L["Quest_10168_Location"] = "D'ore (Auchenaikrypta; "..YELLOW.."[2]"..PREV..")";
+L["Quest_10168_Note"] = "D'ore erscheint, wenn Exarch Maladaar getötet wurde. Mutter Kashur befindet sich in Nagrand ("..YELLOW.."26.0, 61.6"..PREV.."). Man sollte in einer Gruppe aus 3 oder mehr Spielern sein, bevor man die getrübten Geister anspricht.";
+L["Quest_10168_RewardText"] = AQ_NONE;
+L["Quest_10168_PreQuest"] = "Auchindoun...";
+L["Quest_10168_FollowQuest"] = "Rückkehr zur Großmutter";
+
+-- [48] Mana Tombs (Managruft)
+L["Quest_10216_Name"] = "Sicherheit geht vor";
+L["Quest_10216_Objective"] = "Konstrukteur Morphalius möchte, dass Ihr 10 astrale Grufträuber, 5 astrale Zauberer, 5 Nexuswandler und 5 astrale Zauberbinder tötet. Wenn Ihr damit fertig seid, sucht den astralen Transporter in der Kammer vor Shaffars Kammern und aktiviert ihn.";
+L["Quest_10216_Location"] = "Konstrukteur Morphalius (Wälder von Terokkar - Auchindoun; "..YELLOW.."39.4, 58.6"..PREV..")";
+L["Quest_10216_Note"] = "Die Bedienungskonsole des Astraltransporters befindet sich bei "..YELLOW.."[3]"..PREV..".";
+L["Quest_10216_RewardText"] = AQ_NONE;
+L["Quest_10216_FollowQuest"] = "Jemandes Arbeit zahlt sich aus";
+
+L["Quest_10218_Name"] = "Jemandes Arbeit zahlt sich aus";
+L["Quest_10218_Objective"] = "Begleitet Kryoingenieur Sha'heen sicher durch die Managruft, damit er die Astralmaterie aus Shaffars Astralsammlern entnehmen kann. Meldet Euch bei Nexusprinz Haramad außerhalb der Managruft beim Lager des Konsortiums, wenn Ihr erfolgreich wart.";
+L["Quest_10218_Location"] = "Kryoingenieur Sha'heen (Managruft; "..YELLOW.."[3]"..PREV..")";
+L["Quest_10218_Note"] = "Um Kryoingenieur Sha'heen zu beschwören, muss man die Bedienungskonsole des Astraltransporters bei "..YELLOW.."[3]"..PREV.." benutzen. Er spawnt dann zusammen mit mehreren anderen freundlichen Konsortium-NPCs. Alle Gegner in der Instanz sollten vorher besiegt werden. Die Quest kann nur einmal pro Instanz gestartet werden.";
+L["Quest_10218_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+L["Quest_10218_PreQuest"] = "Sicherheit geht vor";
+
+L["Quest_10165_Name"] = "Die Konkurrenz untergraben";
+L["Quest_10165_Objective"] = "Nexusprinz Haramad außerhalb der Managruft möchte, dass Ihr Nexusprinz Shaffar tötet und ihm Shaffars Bandagen bringt.";
+L["Quest_10165_Location"] = "Nexusprinz Haramad (Auchindoun; "..YELLOW.."[2]"..PREV.." auf der Eingangskarte)";
+L["Quest_10165_Note"] = "Nexusprinz Shaffar befindet sich bei "..YELLOW.."[4]"..PREV..".";
+L["Quest_10165_RewardText"] = WHITE.."1"..AQ_OR..PREV.."2"..AQ_OR..PREV.."3"..AQ_OR..PREV.."4";
+
+L["Quest_10977_Name"] = "Stasiskammern der Managruft";
+L["Quest_10977_Objective"] = "Das Bild von Kommandant Ameer beim Landeplatz von Bash'ir im Schergrat möchte, dass Ihr den Stasiskammerschlüssel der Managruft verwendet, um die Stasiskammer in der Managruft Auchindouns zu öffnen.";
+L["Quest_10977_Location"] = "Bild von Kommandant Ameer (Schergrat - Landeplatz von Bash'ir; "..YELLOW.."52.8, 15.0"..PREV..")";
+L["Quest_10977_Note"] = onlyHeroic.." Es gibt zwei Stasiskammern. Die erste befindet sich direkt hinter Pandemonius "..YELLOW.."[1]"..PREV..", die zweite im Raum von Nexusprinz Shaffar "..YELLOW.."[4]"..PREV..". Für beide wird ein Abzeichen des Nexuskönigs benötigt.";
+L["Quest_10977_RewardText"] = WHITE.."1(x5)";
+L["Quest_10977_PreQuest"] = "Das Abzeichen des Nexuskönigs";
+
+L["Quest_11373_Name"] = "Gesucht: Shaffars wundersames Amulett";
+L["Quest_11373_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Shaffars wundersames Amulett zu beschaffen. Bringt es zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
+L["Quest_11373_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0, 36.8"..PREV..")";
+L["Quest_11373_Note"] = onlyHeroic.."\n\nNexusprinz Shaffar befindet sich bei "..YELLOW.."[4]"..PREV..".";
+L["Quest_11373_RewardText"] = WHITE.."1(x2)";
+
+-- [49] Sethekk Halls (Sethekkhallen)			10097, 10098, 11001, 9637, 11372
+
+-- [50] Shadow Labyrinth (Schattenlabyrinth)	10178, 10091, 10649, 10177, 10094, 10095, 10885, 9831, 10666, 11375, 11376
+
+-- [51] Serpentshrine Cavern (Höhle des Schlangenschreins)			10445, 10944
+
+-- [62] Black Temple (Der Schwarze Tempel)			10958, 10957, 10959
+
+-------------------------------------------
+-- Wrath of the Lich King Classic Quests --
+-------------------------------------------
 L["Quest_13149_Name"] = "Illusionen bannen";
 L["Quest_13149_Objective"] = "Chromie möchte, dass Ihr den arkanen Disruptor auf die verdächtigen Kisten im Stratholme der Vergangenheit anwendet und sie anschließend am Eingang von Stratholme trefft.";
 L["Quest_13149_Location"] = "Chromie (Stratholme Past; "..YELLOW.."[1]"..WHITE..")";
@@ -3335,7 +3696,9 @@ L["Quest_26034_Note"] = "Halion ist der Hauptboss, zu finden bei "..YELLOW.."[1]
 L["Quest_26034_RewardText"] = WHITE.."1(x5)";
 L["Quest_26034_PreQuest"] = "Ärger am Wyrmruhtempel";
 
--- Retail Quests
+-------------------------------------------
+-------------- Retail Quests --------------
+-------------------------------------------
 L["Quest_27756_Name"] = "Der Vorarbeiter";
 L["Quest_27756_Objective"] = "Tötet Glubtok.";
 L["Quest_27756_Location"] = "Leutnant Horatio Laine (Todesmine; "..GREEN.."[1']"..WHITE..")";
@@ -4734,12 +5097,6 @@ L["Quest_29528_Location"] = "Vorhutsspäher Chadwick (Höllenfeuerbollwerk; "..B
 L["Quest_29528_Note"] = "Wachhabenden Gargolmar ist bei "..YELLOW.."[1]"..WHITE.." und Vazruden den Herold und Vazrudens Drachen Nazan sind bei "..YELLOW.."[3]"..WHITE..".";
 L["Quest_29528_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 
-L["Quest_11354_Name"] = "Gesucht: Nazans Reitgerte";
-L["Quest_11354_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Nazans Reitgerte zu beschaffen. Bringt sie zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
-L["Quest_11354_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0,37.0"..WHITE..")";
-L["Quest_11354_Note"] = "Diese Aufgabe kann nur auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden.\n\nNazan ist bei "..YELLOW.."[3]"..WHITE..".";
-L["Quest_11354_RewardText"] = AQ_NONE;
-
 L["Quest_29542_Name"] = "Die Eroberung der Zitadelle";
 L["Quest_29542_Objective"] = "Sprecht mit Steingardist Stok'ton im Höllenfeuerbollwerk.";
 L["Quest_29542_Location"] = "Unteroffizier Schädelbrecher (Höllenfeuerhalbinsel - Thrallmar; "..YELLOW.."58.0,41.2"..WHITE..")";
@@ -4781,12 +5138,6 @@ L["Quest_29540_Objective"] = "Tötet Keli'dan den Zerstörer und kehrt zu Gunny 
 L["Quest_29540_Location"] = "Gunny (Blutkessel; "..BLUE.."Eingang"..WHITE..")";
 L["Quest_29540_Note"] = "Keli'dan der Zerstörer ist bei "..YELLOW.."[3]"..WHITE..".";
 L["Quest_29540_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
-
-L["Quest_11362_Name"] = "Gesucht: Keli'dans gefiederter Stab";
-L["Quest_11362_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Keli'dans gefiederten Stab zu beschaffen. Bringt ihn zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
-L["Quest_11362_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0,37.0"..WHITE..")";
-L["Quest_11362_Note"] = "Diese Aufgabe kann nur auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden.\n\nKeli'dan der Zerstörer ist bei "..YELLOW.."[3]"..WHITE..".";
-L["Quest_11362_RewardText"] = AQ_NONE;
 
 L["Quest_29535_Name"] = "Lasst sie bluten!";
 L["Quest_29535_Objective"] = "Beschafft 10 Phiolen mit Höllenorcblut und eine Teufelsinjektionsspritze für Caza'rez.";
@@ -4844,12 +5195,6 @@ L["Quest_10670_RewardText"] = AQ_NONE;
 L["Quest_10670_PreQuest"] = "Frisch von der Mechanar ("..YELLOW.."FdS: Die Mechanar"..WHITE..") & Encyclopaedia Daemonica ("..YELLOW.."Auch: Schattenlabyrinth"..WHITE..")";
 L["Quest_10670_FollowQuest"] = "Bann der Illidari";
 
-L["Quest_11363_Name"] = "Gesucht: Messerfausts Siegel";
-L["Quest_11363_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Messerfausts Siegel zu beschaffen. Bringt es zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
-L["Quest_11363_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0,37.0"..WHITE..")";
-L["Quest_11363_Note"] = "Diese Aufgabe kann nur auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden.\n\nKriegshäuptling Kargath Messerfaust befindet sich bei "..YELLOW.."[5]"..WHITE..".";
-L["Quest_11363_RewardText"] = AQ_NONE;
-
 L["Quest_11364_Name"] = "Gesucht: Zenturionen der Zerschmetterten Hand";
 L["Quest_11364_Objective"] = "Netherpirscher Mah'duun hat Euch damit beauftragt, 4 Zenturionen der Zerschmetterten Hand zu töten. Kehrt erst zu ihm in das untere Viertel in Shattrath zurück, wenn sie alle dem Tod überantwortet wurden.";
 L["Quest_11364_Location"] = "Netherpirscher Mah'duun (Shattrath - Unteres Viertel; "..YELLOW.."75.2, 37.6"..WHITE..")";
@@ -4901,14 +5246,14 @@ L["Quest_10888_PreQuest"] = "Die Prüfung der Naaru: Zuverlässigkeit, Erbarmen 
 
 L["Quest_11002_Name"] = "Magtheridons Untergang";
 L["Quest_11002_Objective"] = "Bringt Magtheridons Kopf zu Truppenkommandant Danath Trollbann in der Ehrenfeste auf der Höllenfeuerhalbinsel zurück.";
-L["Quest_11002_Location"] = "Magtheridons Kopf (droppt von Magtheridon; "..YELLOW.."[1]"..WHITE..")";
-L["Quest_11002_Note"] = "Nur eine Person im Schlachtzug kann den Kopf erhalten, um die Quest zu starten. Truppenkommandant Danath Trollbann befindet sich bei "..YELLOW.."56.6, 66.6"..WHITE..".";
+L["Quest_11002_Location"] = "Magtheridons Kopf (droppt von Magtheridon; "..YELLOW.."[1]"..PREV..")";
+L["Quest_11002_Note"] = "Nur eine Person im Schlachtzug kann den Kopf erhalten, um diese Quest zu starten. Truppenkommandant Danath Trollbann befindet sich bei "..YELLOW.."56.6, 66.6"..WHITE..".";
 L["Quest_11002_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 
 L["Quest_11003_Name"] = "Magtheridons Untergang";
 L["Quest_11003_Objective"] = "Bringt Magtheridons Kopf zu Nazgrel in Thrallmar auf der Höllenfeuerhalbinsel.";
-L["Quest_11003_Location"] = "Magtheridons Kopf (droppt von Magtheridon; "..YELLOW.."[1]"..WHITE..")";
-L["Quest_11003_Note"] = "Nur eine Person im Schlachtzug kann den Kopf erhalten, um die Quest zu starten. Nazgrel befindet sich bei "..YELLOW.."55.0, 36.0"..WHITE..".";
+L["Quest_11003_Location"] = "Magtheridons Kopf (droppt von Magtheridon; "..YELLOW.."[1]"..PREV..")";
+L["Quest_11003_Note"] = "Nur eine Person im Schlachtzug kann den Kopf erhalten, um diese Quest zu starten. Nazgrel befindet sich bei "..YELLOW.."55.0, 36.0"..WHITE..".";
 L["Quest_11003_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 
 L["Quest_29566_Name"] = "Die verlorene Expedition";
@@ -5058,7 +5403,7 @@ L["Quest_29595_FollowQuest"] = "Das Ende des Exarchen";
 L["Quest_29596_Name"] = "Das Ende des Exarchen";
 L["Quest_29596_Objective"] = "Tötet Exarch Maladaar und kehrt zu dem Draeneigeist in der Auchenaikrypta zurück.";
 L["Quest_29596_Location"] = "Draeneigeist (Auchenaikrypta; "..BLUE.."Eingang"..WHITE..").";
-L["Quest_29596_Note"] = "Exarch Maladarr ist bei "..YELLOW.."[2]"..WHITE..".";
+L["Quest_29596_Note"] = "Exarch Maladaar ist bei "..YELLOW.."[2]"..WHITE..".";
 L["Quest_29596_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 L["Quest_29596_PreQuest"] = "Alles wird gut";
 
@@ -5074,24 +5419,18 @@ L["Quest_29591_Location"] = "Gequälte Seelenpriesterin (Auchenaikrypta; "..YELL
 L["Quest_29591_Note"] = "Die erbosten Skelette sind hinter dem Boss Shirrak den Totenwächter bei "..YELLOW.."[1]"..WHITE..".";
 L["Quest_29591_RewardText"] = AQ_NONE;
 
-L["Quest_11374_Name"] = "Gesucht: Der Seelenedelstein des Exarchen";
-L["Quest_11374_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm den Seelenedelstein des Exarchen zu beschaffen. Bringt diesen zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
-L["Quest_11374_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0,37.0"..WHITE..")";
-L["Quest_11374_Note"] = "Diese Aufgabe muss auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden.\n\nExarch Maladaar ist bei "..YELLOW.."[2]"..WHITE..".";
-L["Quest_11374_RewardText"] = AQ_NONE;
-
 L["Quest_10167_Name"] = "Auchindoun...";
 L["Quest_10167_Objective"] = "Reist zur Auchenaikrypta in der Knochenwüste der Wälder von Terokkar und tötet Exarch Maladaar um den Geist von D'ore zu befreien.";
 L["Quest_10167_Location"] = "A'dal (Shattrath - Terrasse des Lichts; "..YELLOW.."54.6, 44.6"..WHITE..")";
-L["Quest_10167_Note"] = "Exarch Maladarr ist bei "..YELLOW.."[2]"..WHITE..". D'ore erscheint, wenn Exarch Maladarr getötet wurde.";
+L["Quest_10167_Note"] = "Exarch Maladaar ist bei "..YELLOW.."[2]"..WHITE..". D'ore erscheint, wenn Exarch Maladaar getötet wurde.";
 L["Quest_10167_RewardText"] = AQ_NONE;
 L["Quest_10167_PreQuest"] = "Ein Besuch bei der Großmutter -> Ein gelüftetes Geheimnis";
 L["Quest_10167_FollowQuest"] = "Was die Seele sieht";
 
 L["Quest_10168_Name"] = "Was die Seele sieht";
-L["Quest_10168_Objective"] = "Sucht einen Seelenspiegel in der Auchenaikrypta und benutzt ihn, um einen getrübten Geist eines uralten Orcahnen zu rufen. Zerstört 15 getrübte Geister, damit die Ahnen in Frieden ruhen können.";
+L["Quest_10168_Objective"] = "Sucht einen Seelenspiegel in der Auchenaikrypta und benutzt ihn, um einen getrübten Geist eines uralten Orcahnen zu rufen. Zerstört 15 getrübte Geister, damit die Ahnen in Frieden ruhen können. Kehrt zu Mutter Kashur im Ahnengrund zurück, wenn Ihr fertig seid.";
 L["Quest_10168_Location"] = "D'ore (Auchenaikrypta; "..YELLOW.."[2]"..WHITE..").";
-L["Quest_10168_Note"] = "D'ore erscheint, wenn Exarch Maladarr getötet wurde. Mutter Kashur ist bei (Nagrand; "..YELLOW.."26,61"..WHITE.."). Man sollte in einer Gruppe aus 3 oder mehr Spielern sein, bevor man die getrübten Geister anspricht.";
+L["Quest_10168_Note"] = "D'ore erscheint, wenn Exarch Maladaar getötet wurde. Mutter Kashur befindet sich in Nagrand ("..YELLOW.."26.0, 61.6"..PREV.."). Man sollte in einer Gruppe aus 3 oder mehr Spielern sein, bevor man die getrübten Geister anspricht.";
 L["Quest_10168_RewardText"] = AQ_NONE;
 L["Quest_10168_PreQuest"] = "Auchindoun...";
 L["Quest_10168_FollowQuest"] = "Rückkehr zur Großmutter";
@@ -5124,14 +5463,8 @@ L["Quest_10977_Name"] = "Stasiskammern der Managruft (Heroisch)";
 L["Quest_10977_Objective"] = "Das Bild von Kommandant Ameer beim Landeplatz von Bash'ir im Schergrat möchte, dass Ihr den Stasiskammerschlüssel der Managruft verwendet, um die Stasiskammer in der Managruft Auchindouns zu öffnen.";
 L["Quest_10977_Location"] = "Bild von Kommandant Ameer (Schergrat - Landeplatz von Bash'ir; "..YELLOW.."52,15"..WHITE..").";
 L["Quest_10977_Note"] = "Diese Aufgabe kann nur auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden. Es gibt zwei Stasiskammern. Die erste befindet sich direkt hinter Pandemonius "..YELLOW.."[1]"..WHITE..", die zweite im Raum von Nexusprinz Shaffar "..YELLOW.."[3]"..WHITE..". Für beide wird ein Abzeichen des Nexuskönigs benötigt.";
-L["Quest_10977_RewardText"] = AQ_NONE;
+L["Quest_10977_RewardText"] = AQ_NONE; -- different from Classic version
 L["Quest_10977_PreQuest"] = "Das Abzeichen des Nexuskönigs";
-
-L["Quest_11373_Name"] = "Gesucht: Shaffars wundersames Amulett";
-L["Quest_11373_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Shaffars wundersames Amulett zu beschaffen. Bringt es zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
-L["Quest_11373_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0,37.0"..WHITE..")";
-L["Quest_11373_Note"] = "Diese Aufgabe muss auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden.\n\nNexusprinz Shaffar ist bei "..YELLOW.."[3]"..WHITE..".";
-L["Quest_11373_RewardText"] = AQ_NONE;
 
 L["Quest_29582_Name"] = "Greks verrückte Nacht";
 L["Quest_29582_Objective"] = "Sprecht mit Konstrukteur Morphalius in der Managruft in Auchindoun.";
