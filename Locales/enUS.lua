@@ -3036,7 +3036,7 @@ L["Quest_11376_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower Cit
 L["Quest_11376_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
 L["Quest_11376_RewardText"] = WHITE.."1";
 
--- [51] Old Hillsbrad Foothills
+-- [51] Serpentshrine Cavern
 L["Quest_10445_Name"] = "The Vials of Eternity";
 L["Quest_10445_Objective"] = "Soridormi at Caverns of Time wants you to retrieve Vashj's Vial Remnant from Lady Vashj at Coilfang Reservoir and Kael's Vial Remnant from Kael'thas Sunstrider at Tempest Keep.";
 L["Quest_10445_Location"] = "Soridormi (Tanaris - Caverns of Time; "..YELLOW.."58,57"..WHITE.."). NPC walks around the area.";

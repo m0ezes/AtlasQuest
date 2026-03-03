@@ -2914,6 +2914,13 @@ L["Quest_11373_RewardText"] = WHITE.."1(x2)";
 -- [50] Shadow Labyrinth (Schattenlabyrinth)	10178, 10091, 10649, 10177, 10094, 10095, 10885, 9831, 10666, 11375, 11376
 
 -- [51] Serpentshrine Cavern (Höhle des Schlangenschreins)			10445, 10944
+L["Quest_10445_Name"] = "Die Phiolen der Ewigkeit";
+L["Quest_10445_Objective"] = "Soridormi in den Höhlen der Zeit möchte, dass Ihr die Überreste von Vashjs Phiole von Lady Vashj im Echsenkessel und die Überreste von Kaels Phiole von Kael'thas Sonnenwanderer in der Festung der Stürme besorgt.";
+L["Quest_10445_Location"] = "Soridormi (Tanaris - Höhlen der Zeit; "..YELLOW.."58, 57"..PREV.."). NPC walks around the area.";
+L["Quest_10445_Note"] = "Diese Quest wird für das Attunement für Battle of Mount Hyjal benötigt. Kael'thas Sunstrider ist bei "..YELLOW.."[4]"..PREV..".";
+L["Quest_10445_RewardText"] = AQ_NONE;
+
+
 
 -- [62] Black Temple (Der Schwarze Tempel)			10958, 10957, 10959
 
