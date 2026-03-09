@@ -45,6 +45,14 @@
 ## SavedVariables: AtlasQuest_Options,AtlasQuestDB
 
 Libs\Libs.xml
-Locales\Locales.xml
+Locales\enUS_retail.lua
+Locales\deDE_retail.lua
+Locales\esES.lua
+Locales\esMX.lua
+Locales\koKR.lua
+Locales\ruRU.lua
+# Simplified / Traditional Chinese
+Locales\zhCN.lua
+Locales\zhTW.lua
 Core\AtlasQuest_InsideFrame.xml
 Core\AtlasQuest.xml

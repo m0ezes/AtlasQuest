@@ -17,9 +17,10 @@ local AQ_ORDERRESOURCES = " Order Resources";
 local AQ_VEILEDARGUNITE = " Veiled Argunite";
 local AQ_AZERITE = " Azerite";
 local AQ_CLASSREWARDS = WHITE.." Varies for each class";
-local AQ_RENOWN = "Renown";
 local AQ_WORLDDUNGEONQUEST = "This is a Dungeon World Quest.  When the quest is active (you can check your ingame map to see if it is available), enter the Dungeon to obtain it.  When you complete the dungeon it will be automatically turned in.  The quest will reward reputation and sometimes an item.";
-local onlyHeroic = "This quest can only be completed in 'Heroic' difficulty."
+
+local onlyHeroic  = "This quest can only be completed in 'Heroic' difficulty."
+local dailyQuest  = "One of many repeatable daily quests that can be available from this NPC (random). Can be completed on any difficulty."
 local dailyHeroic = "One of many repeatable daily quests that can be available from this NPC (random). Requires 'Heroic' difficulty."
 
 local AQ_OR = GREY.." or ";
@@ -98,7 +99,7 @@ if (select(4, GetBuildInfo()) < 90000) then
 	L["Instance_35_Name"] = "Warsong Gulch";
 	L["Instance_36_Name"] = "Dragons of Nightmare";
 	L["Instance_37_Name"] = "Azuregos";
-	L["Instance_38_Name"] = "Highlord Kruul";
+	L["Instance_38_Name"] = "Highlord Kruul"; -- Atlas_OutdoorRaids (this is a world boss from TBC? HighlordKruul.blp seems to be incorrect for this anyways)
 	-- Burning Crusade Classic Instances
 	L["Instance_40_Name"] = "Hellfire Ramparts";
 	L["Instance_41_Name"] = "The Blood Furnace";
@@ -120,13 +121,13 @@ if (select(4, GetBuildInfo()) < 90000) then
 	L["Instance_57_Name"] = "The Arcatraz";
 	L["Instance_58_Name"] = "The Botanica";
 	L["Instance_59_Name"] = "The Mechanar";
-	L["Instance_60_Name"] = "Eye of the Storm";
+	L["Instance_60_Name"] = "Eye of the Storm"; -- Atlas_Battlegrounds
 	L["Instance_61_Name"] = "The Eye";
 	L["Instance_62_Name"] = "Black Temple";
 	L["Instance_63_Name"] = "Zul'Aman";
 	L["Instance_65_Name"] = "Skettis";
 	L["Instance_67_Name"] = "Magisters' Terrace";
-	L["Instance_68_Name"] = "Sunwell Plateau";
+	L["Instance_68_Name"] = "Sunwell Plateau"; -- has no quests
 	-- Wrath of the Lich King Classic Instances
 	L["Instance_69_Name"] = "Culling of Stratholme";
 	L["Instance_70_Name"] = "Utgarde Keep";
@@ -2583,7 +2584,7 @@ L["Quest_9587_FollowQuest"] = "The Blood is Life ("..YELLOW.."HFC: Blood Furnace
 L["Quest_11354_Name"] = "Wanted: Nazan's Riding Crop";
 L["Quest_11354_Objective"] = "Wind Trader Zhareem has asked you to obtain Nazan's Riding Crop. Deliver it to him in Shattrath's Lower City to collect the reward.";
 L["Quest_11354_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 36.8"..WHITE..")";
-L["Quest_11354_Note"] = "One of many repeatable Daily Quests that can be available from this NPC (random). Requires 'Heroic' difficulty.\n\nNazan is the final boss, located at "..YELLOW.."[3]"..PREV..".";
+L["Quest_11354_Note"] = dailyHeroic.."\n\nNazan is the final boss, located at "..YELLOW.."[3]"..PREV..".";
 L["Quest_11354_RewardText"] = WHITE.."1(x2)";
 
 L["Quest_9572_Name"] = "Weaken the Ramparts"; -- Horde
@@ -2592,7 +2593,7 @@ L["Quest_9572_Location"] = "Stone Guard Stok'ton (Hellfire Peninsula - Thrallmar
 L["Quest_9572_Note"] = "Gargolmar is at "..YELLOW.."[1]"..WHITE..", Omor is at "..YELLOW.."[2]"..WHITE.." and Nazan is at "..YELLOW.."[3]"..WHITE..". Caza'rez is at (Hellfire Peninsula - Thrallmar; "..YELLOW.."54.8, 36.0"..WHITE.."). \n\nTo get this quest, you must complete 'Forward Base: Reaver's Fall', which starts with the 'Through the Dark Portal' quest you receive at the Dark Portal in Blasted Lands.";
 L["Quest_9572_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 L["Quest_9572_PreQuest"] = "Through the Dark Portal -> Forward Base: Reaver's Fall";
-L["Quest_9572_FollowQuest"] = "Heart of Rage ("..YELLOW.."HFC: Blood Furnace"..WHITE..")";
+L["Quest_9572_FollowQuest"] = "Heart of Rage ("..YELLOW.."Blood Furnace"..PREV..")";
 
 L["Quest_9588_Name"] = "Dark Tidings"; -- Horde
 L["Quest_9588_Objective"] = "Take the Ominous Letter to Nazgrel at Thrallmar in Hellfire Peninsula.";
@@ -2713,7 +2714,7 @@ L["Quest_9496_RewardText"] = AQ_NONE;
 L["Quest_9495_Name"] = "The Will of the Warchief";
 L["Quest_9495_Objective"] = "Bring Warchief Kargath's Fist to Nazgrel in Thrallmar.";
 L["Quest_9495_Location"] = "Nazgrel (Hellfire Peninsula - Thrallmar; "..YELLOW.."55,36"..WHITE..")";
-L["Quest_9495_Note"] = "Warchief Kargath Bladefist is Located at "..YELLOW.."[5]"..WHITE..".";
+L["Quest_9495_Note"] = "Warchief Kargath Bladefist is located at "..YELLOW.."[5]"..WHITE..".";
 L["Quest_9495_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 
 L["Quest_9525_Name"] = "Imprisoned in the Citadel";
@@ -2753,9 +2754,9 @@ L["Quest_11003_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..
 L["Quest_9738_Name"] = "Lost in Action";
 L["Quest_9738_Objective"] = "Discover what happened to Earthbinder Rayge, Naturalist Bite, Weeder Greenthumb, and Windcaller Claw. Then, return to Watcer Jhang at Coilfang Reservoir in Zangarmarsh.";
 L["Quest_9738_Location"] = "Watcher Jhang (Coilfang Reservoir; "..YELLOW.."52,36"..WHITE..")";
-L["Quest_9738_Note"] = "Watcher Jhang is in the underwater cavern at the summoning stone. Earthbinder Rayge is at "..YELLOW.."[3]"..WHITE..", Windcaller Claw is at "..YELLOW.."[4]"..WHITE..". The prequests do not appear to be necessary to obtain this quest.";
+L["Quest_9738_Note"] = "Watcher Jhang is in the underwater cavern at the summoning stone. Earthbinder Rayge is at "..YELLOW.."[3]"..WHITE..", Windcaller Claw is at "..YELLOW.."[4]"..WHITE..".";
 L["Quest_9738_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3";
-L["Quest_9738_PreQuest"] = "Drain Schematics -> Failed Incursion";
+L["Quest_9738_PreQuest"] = "Drain Schematics -> Failed Incursion (optional)";
 
 L["Quest_11368_Name"] = "Wanted: The Heart of Quagmirran";
 L["Quest_11368_Objective"] = "Wind Trader Zhareem has asked you to obtain The Heart of Quagmirran. Deliver it to him in Shattrath's Lower City to collect the reward.";
@@ -2815,7 +2816,7 @@ L["Quest_9764_FollowQuest"] = "Preparing for War";
 L["Quest_10885_Name"] = "Trial of the Naaru: Strength";
 L["Quest_10885_Objective"] = "A'dal in Shattrath City wants you to recover Kalithresh's Trident and Murmur's Essence."; -- This quest is part of the attunement for Tempest Keep: The Eye
 L["Quest_10885_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."54.6, 44.6"..WHITE..")";
-L["Quest_10885_Note"] = onlyHeroic.."\nMurmur is at "..YELLOW.."[5]"..PREV.." in Shadow Labyrinth. Kalithresh's Trident comes from The Steamvault.\n\nThis quest is required to enter Tempest Keep: The Eye.";
+L["Quest_10885_Note"] = onlyHeroic.."\nMurmur is at "..YELLOW.."[5]"..PREV.." in Shadow Labyrinth. Kalithresh's Trident is found in The Steamvault at "..YELLOW.."[4]"..PREV..".\n\nThis quest is required to enter Tempest Keep: The Eye.";
 L["Quest_10885_RewardText"] = AQ_NONE;
 L["Quest_10885_PreQuest"] = "The Hand of Gul'dan -> The Cipher of Damnation";
 L["Quest_10885_FollowQuest"] = "Trial of the Naaru: Magtheridon";
@@ -2830,7 +2831,7 @@ L["Quest_10667_FollowQuest"] = "Bane of the Illidari";
 
 L["Quest_9832_Name"] = "The Second and Third Fragments";
 L["Quest_9832_Objective"] = "Obtain the Second Key Fragment from an Arcane Container inside Coilfang Reservoir and the Third Key Fragment from an Arcane Container inside Tempest Keep. Return to Khadgar in Shattrath City after you've completed this task.";
-L["Quest_9832_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."53,43"..WHITE..")";
+L["Quest_9832_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."54.6, 44.6"..WHITE..")";
 L["Quest_9832_Note"] = "Part of the Karazhan attunement line. The Arcane Container is at "..YELLOW.."[2]"..WHITE..". Opening it will spawn an elemental that must be killed to get the fragment. The Second Key Fragment is in The Steamvault.";
 L["Quest_9832_RewardText"] = AQ_NONE;
 L["Quest_9832_PreQuest"] = "Entry Into Karazhan ("..YELLOW.."Auch: Shadow Labyrinth"..WHITE..")";
@@ -2864,15 +2865,22 @@ L["Quest_9719_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2";
 L["Quest_11369_Name"] = "Wanted: A Black Stalker Egg";
 L["Quest_11369_Objective"] = "Wind Trader Zhareem wants you to obtain a Black Stalker Egg. Deliver it to him in Shattrath's Lower City to collect the reward.";
 L["Quest_11369_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 36.8"..WHITE..")";
-L["Quest_11369_Note"] = "One of many Daily Quests that can be available each day from this NPC.  Requires Heroic Difficulty.\n\nThe Black Stalker is the final boss.";
+L["Quest_11369_Note"] = dailyHeroic.."\n\nThe Black Stalker is the final boss.";
 L["Quest_11369_RewardText"] = WHITE.."1(x2)";
 
 L["Quest_9715_Name"] = "Bring Me A Shrubbery!";
 L["Quest_9715_Objective"] = "Collect 5 Sanguine Hibiscus and return them to Gzhun'tt at Sporeggar in Zangarmarsh.";
 L["Quest_9715_Location"] = "Gzhun'tt (Zangarmarsh - Sporeggar; "..YELLOW.."19,50"..WHITE..")";
-L["Quest_9715_Note"] = "You must be Friendly with Sporeggar to pick up this quest. The followup is just a repeatable quest that gives Sporeggar Reputation with each turn-in. The Sanguine Hibiscus are scattered throughout Underbog near plants and also drop off of Bog mobs, including those in Steamvault. They are also tradeable and can be found on the Auction House.";
+L["Quest_9715_Note"] = "You must be Friendly with Sporeggar to pick up this quest. The Sanguine Hibiscus are scattered throughout Underbog near plants and also drop off of Bog mobs, including those in Steamvault. They are also tradeable and can be found on the Auction House.";
 L["Quest_9715_RewardText"] = AQ_NONE;
 L["Quest_9715_FollowQuest"] = "Bring Me Another Shrubbery!";
+
+L["Quest_9714_Name"] = "Bring Me Another Shrubbery!";
+L["Quest_9714_Objective"] = "We can still use more sanguine hibiscus. We're always struggling to find more.";
+L["Quest_9714_Location"] = "T'shu (The Underbog; "..BLUE.."Entrance"..WHITE..")";
+L["Quest_9714_Note"] = "This is a repeatable version of the previous quest. It gives 750 Sporeggar reputation with each turn-in. For more information, see previous quest.";
+L["Quest_9714_RewardText"] = AQ_NONE;
+L["Quest_9714_PreQuest"] = "Bring Me A Shrubbery!";
 
 -- [47] Auchenai Crypts
 L["Quest_10164_Name"] = "Everything Will Be Alright";
@@ -2891,7 +2899,7 @@ L["Quest_11374_RewardText"] = WHITE.."1(x2)";
 L["Quest_10167_Name"] = "Auchindoun...";
 L["Quest_10167_Objective"] = "Travel to the Auchenai Crypts in the Bone Wastes of Terokkar Forest and slay Exarch Maladaar to free the spirit of D'ore.";
 L["Quest_10167_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."53,43"..WHITE..")";
-L["Quest_10167_Note"] = "Exarch Maladaar is Located at "..YELLOW.."[2]"..WHITE..". D'ore appears after Exarch Maladaar has been killed.";
+L["Quest_10167_Note"] = "Exarch Maladaar is located at "..YELLOW.."[2]"..WHITE..". D'ore appears after Exarch Maladaar has been killed.";
 L["Quest_10167_RewardText"] = AQ_NONE;
 L["Quest_10167_PreQuest"] = "A Visit With the Greatmother -> A Secret Revealed";
 L["Quest_10167_FollowQuest"] = "What The Soul Sees";
@@ -2942,7 +2950,7 @@ L["Quest_11373_RewardText"] = WHITE.."1(x2)";
 L["Quest_10097_Name"] = "Brother Against Brother";
 L["Quest_10097_Objective"] = "Kill Darkweaver Syth in the Sethekk halls, then free Lakka from captivity. Return to Isfar outside the Sethekk Halls when you've completed the rescue.";
 L["Quest_10097_Location"] = "Isfar (Terokkar Forest - Auchindoun; "..YELLOW.."44,65"..WHITE..")";
-L["Quest_10097_Note"] = "Darkweaver Syth is at "..YELLOW.."[1]"..WHITE..". Lakka is in a cage in the same room. Openning her cage does not spawn enemies.";
+L["Quest_10097_Note"] = "Darkweaver Syth is at "..YELLOW.."[1]"..WHITE..". Lakka is in a cage in the same room. Opening her cage does not spawn enemies.";
 L["Quest_10097_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 
 L["Quest_10098_Name"] = "Terokk's Legacy";
@@ -2953,15 +2961,15 @@ L["Quest_10098_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3";
 
 L["Quest_11001_Name"] = "Vanquish the Raven God";
 L["Quest_11001_Objective"] = "Slay the Raven God and return to Morthis Whisperwing at Cenarion Refuge.";
-L["Quest_11001_Location"] = "Morthis Whisperwing (Zangarmarsh - Cenarion Refuge; "..YELLOW.."80,65"..WHITE..")";
-L["Quest_11001_Note"] = "Requires Heroic Dungeon Difficulty. This is the last quest in the Druid Swift Flight Form questline. The Raven God Anzu is summoned at "..YELLOW.."[2]"..WHITE.." with materials provided by the quest giver.";
+L["Quest_11001_Location"] = "Morthis Whisperwing (Zangarmarsh - Cenarion Refuge; "..YELLOW.."80.2, 65.0"..PREV..")";
+L["Quest_11001_Note"] = onlyHeroic.." This is the last quest in the Druid Swift Flight Form questline. The Raven God Anzu is summoned at "..YELLOW.."[2]"..WHITE.." with materials provided by the quest giver.";
 L["Quest_11001_RewardText"] = WHITE.."1";
 L["Quest_11001_PreQuest"] = "The Eagle's Essence -> Chasing the Moonstone";
 
 L["Quest_11372_Name"] = "Wanted: The Headfeathers of Ikiss";
 L["Quest_11372_Objective"] = "Wind Trader Zhareem has asked you to acquire The Headfeathers of Ikiss. Deliver them to him in Shattrath's Lower City to collect the reward.";
 L["Quest_11372_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 36.8"..WHITE..")";
-L["Quest_11372_Note"] = "One of many Daily Quests that can be available each day from this NPC.  Requires Heroic Difficulty.\n\nTalon King Ikiss is at "..YELLOW.."[3]"..WHITE..".";
+L["Quest_11372_Note"] = dailyHeroic.."\n\nTalon King Ikiss is at "..YELLOW.."[3]"..WHITE..".";
 L["Quest_11372_RewardText"] = WHITE.."1(x2)";
 
 -- [50] Shadow Labyrinth
@@ -2981,22 +2989,22 @@ L["Quest_10091_PreQuest"] = "Find Spy To'gun";
 
 L["Quest_10649_Name"] = "The Book of Fel Names";
 L["Quest_10649_Objective"] = "Venture inside the Shadow Labyrinth in Auchindoun and obtain the Book of Fel Names from Blackheart the Inciter. Return to Altruis in Nagrand once you've completed this task.";
-L["Quest_10649_Location"] = "Altruis the Sufferer (Nagrand; "..YELLOW.."27,43"..WHITE..")";
-L["Quest_10649_Note"] = "Blackheart the Inciter is at "..YELLOW.."[3]"..WHITE..". This is the last part of a chain quest that starts in Shadowmoon Valley at "..YELLOW.."61,28"..WHITE.." for Aldor and "..YELLOW.."55,58"..WHITE.." for Scryer";
+L["Quest_10649_Location"] = "Altruis the Sufferer (Nagrand; "..YELLOW.."27.2, 43.0"..PREV..")";
+L["Quest_10649_Note"] = "Blackheart the Inciter is at "..YELLOW.."[3]"..WHITE..". This is the last part of a chain quest that starts in Shadowmoon Valley at "..YELLOW.."61.2, 29.2"..WHITE.." for Aldor and "..YELLOW.."55.8, 58.2"..WHITE.." for Scryer.";
 L["Quest_10649_RewardText"] = AQ_NONE;
 L["Quest_10649_PreQuest"] = "Illidan's Pupil";
 L["Quest_10649_FollowQuest"] = "Return to the Aldor or Return to the Scryers";
 
 L["Quest_10177_Name"] = "Trouble at Auchindoun";
 L["Quest_10177_Objective"] = "Report to Field Commander Mahfuun at the entrance to the Shadow Labyrinth at Auchindoun in Terokkar Forest.";
-L["Quest_10177_Location"] = "Spymistress Mehlisah Highcrown (Shattrath City - Terrace of Light; "..YELLOW.."51,45"..WHITE..")";
-L["Quest_10177_Note"] = "Field Commander Mahfuun is at (Terrokar Forest - Auchindoun; "..YELLOW.."40,72"..WHITE.."), just out the Shadow Labyrinth entrance.";
+L["Quest_10177_Location"] = "Spymistress Mehlisah Highcrown (Shattrath City - Terrace of Light; "..YELLOW.."50.4, 45.2"..PREV..")";
+L["Quest_10177_Note"] = "Field Commander Mahfuun is in the Shadow Labyrinth entrance area ("..YELLOW.."[4]"..PREV.." on Entrance map).";
 L["Quest_10177_RewardText"] = AQ_NONE;
 L["Quest_10177_FollowQuest"] = "The Codex of Blood";
 
 L["Quest_10094_Name"] = "The Codex of Blood";
 L["Quest_10094_Objective"] = "Read from the Codex of Blood in the Shadow Labyrinth of Auchindoun.";
-L["Quest_10094_Location"] = "Field Commander Mahfuun (Terrokar Forest - Auchindoun; "..YELLOW.."40,72"..WHITE..")";
+L["Quest_10094_Location"] = "Field Commander Mahfuun (Terrokar Forest - Auchindoun; "..YELLOW.."[4]"..PREV.." on Entrance map)";
 L["Quest_10094_Note"] = "The Codex of Blood is just in front of Grandmaster Vorpil at "..YELLOW.."[4]"..WHITE..".";
 L["Quest_10094_RewardText"] = AQ_NONE;
 L["Quest_10094_PreQuest"] = "Trouble at Auchindoun";
@@ -3012,14 +3020,14 @@ L["Quest_10095_PreQuest"] = "The Codex of Blood";
 L["Quest_9831_Name"] = "Entry Into Karazhan";
 L["Quest_9831_Objective"] = "Khadgar wants you to enter the Shadow Labyrinth at Auchindoun and retrieve the First Key Fragment from an Arcane Container hidden there. Return to Khadgar with the fragment.";
 L["Quest_9831_Location"] = "Khadgar (Shattrath City - Terrace of Light; "..YELLOW.."54,44"..WHITE..")";
-L["Quest_9831_Note"] = "Part of the Karazhan attunement line. The Arcane Container is next to Murmur at "..YELLOW.."[5]"..WHITE..". Opening it will spawn an elemental that must be killed to get the fragment.";
+L["Quest_9831_Note"] = "Part of the Karazhan attunement line. The Arcane Container is next to Murmur at "..YELLOW.."[6]"..PREV..". Opening it will spawn an elemental that must be killed to get the fragment.";
 L["Quest_9831_RewardText"] = AQ_NONE;
 L["Quest_9831_PreQuest"] = "Khadgar";
-L["Quest_9831_FollowQuest"] = "Entry into Karazhan";
+L["Quest_9831_FollowQuest"] = "The Second and Third Fragments";
 
 L["Quest_10666_Name"] = "The Lexicon Demonica";
 L["Quest_10666_Objective"] = "Obtain the Lexicon Demonica from Grandmaster Vorpil and bring it to David Wayne at Wayne's Refuge.";
-L["Quest_10666_Location"] = "David Wayne (Terokkar Forest - Wayne's Refuge; "..YELLOW.."78,39"..WHITE..").";
+L["Quest_10666_Location"] = "David Wayne (Terokkar Forest - Wayne's Refuge; "..YELLOW.."77.6, 38.8"..WHITE..").";
 L["Quest_10666_Note"] = "Grandmaster Vorpil is at "..YELLOW.."[4]"..WHITE..". Completing this quest along with Fresh from the Mechanar ("..YELLOW.."TK: The Mechanar"..WHITE..") will open up two new quests from David Wayne.\n\nThe item will not drop in Heroic mode.";
 L["Quest_10666_RewardText"] = AQ_NONE;
 L["Quest_10666_PreQuest"] = "Additional Materials";
@@ -3027,13 +3035,13 @@ L["Quest_10666_PreQuest"] = "Additional Materials";
 L["Quest_11375_Name"] = "Wanted: Murmur's Whisper";
 L["Quest_11375_Objective"] = "Wind Trader Zhareem has asked you to obtain Murmur's Whisper. Deliver it to him in Shattrath's Lower City to collect the reward.";
 L["Quest_11375_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 36.8"..WHITE..")";
-L["Quest_11375_Note"] = "One of many Daily Quests that can be available each day from this NPC.  Requires Heroic Difficulty.\n\nMurmur is at "..YELLOW.."[5]"..WHITE..".";
+L["Quest_11375_Note"] = dailyHeroic.."\n\nMurmur is at "..YELLOW.."[5]"..PREV..".";
 L["Quest_11375_RewardText"] = WHITE.."1(x2)";
 
 L["Quest_11376_Name"] = "Wanted: Malicious Instructors";
 L["Quest_11376_Objective"] = "Nether-Stalker Mah'duun wants you to kill 3 Malicious Instructors. Return to him in Shattrath's Lower City once they all lie dead in order to collect the bounty.";
 L["Quest_11376_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower City; "..YELLOW.."75.2, 37.6"..WHITE..")";
-L["Quest_11376_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
+L["Quest_11376_Note"] = dailyQuest;
 L["Quest_11376_RewardText"] = WHITE.."1";
 
 -- [51] Serpentshrine Cavern
@@ -3122,7 +3130,7 @@ L["Quest_10282_FollowQuest"] = "Tareth's Diversion";
 L["Quest_10283_Name"] = "Taretha's Diversion";
 L["Quest_10283_Objective"] = "Travel to Durnholde Keep and set 5 incendiary charges at the barrels located inside each of the internment lodges using the Pack of Incendiary Bombs given to you by Erozion. Then speak to Thrall in the basement prison of Durnholde Keep.";
 L["Quest_10283_Location"] = "Erozion (Old Hillsbrad; "..YELLOW.."Entrance"..WHITE..")";
-L["Quest_10283_Note"] = "Thrall is at "..YELLOW.."[2]"..WHITE..". Go to Southshore to hear the story of Ashbringer and see some people with familiar names like Kel'Thuzad and Herod the Bully.";
+L["Quest_10283_Note"] = "Thrall is at "..YELLOW.."[2]"..PREV..". Go to Southshore "..YELLOW.."[4]"..PREV.." to hear the story of Ashbringer and see some people with familiar names like Kel'Thuzad and Herod the Bully.";
 L["Quest_10283_RewardText"] = AQ_NONE;
 L["Quest_10283_PreQuest"] = "Old Hillsbrad";
 L["Quest_10283_FollowQuest"] = "Escape from Durnholde";
@@ -3145,13 +3153,13 @@ L["Quest_10285_PreQuest"] = "Escape from Durnholde";
 L["Quest_11378_Name"] = "Wanted: The Epoch Hunter's Head";
 L["Quest_11378_Objective"] = "Wind Trader Zhareem has asked you to obtain the Epoch Hunter's Head. Deliver it to him in Shattrath's Lower City to collect the reward.";
 L["Quest_11378_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 36.8"..WHITE..")";
-L["Quest_11378_Note"] = "One of many Daily Quests that can be available each day from this NPC.  Requires Heroic Difficulty.\n\nEpoch Hunter is at "..YELLOW.."[5]"..WHITE..".";
+L["Quest_11378_Note"] = dailyHeroic.."\n\nEpoch Hunter is at "..YELLOW.."[3]"..WHITE..".";
 L["Quest_11378_RewardText"] = WHITE.."1(x2)";
 
 L["Quest_12513_Name"] = "Nice Hat...";
 L["Quest_12513_Objective"] = "Don Carlos has inadvertently challenged you to defeat his younger self in Old Hillsbrad. Afterwards, bring Don Carlos' Hat to him in Tanaris as proof.";
-L["Quest_12513_Location"] = "Don Carlos (Tanaris; "..YELLOW.."54,29"..WHITE..")";
-L["Quest_12513_Note"] = "Don Carlos patrols the road near "..YELLOW.."[??]"..WHITE..".";
+L["Quest_12513_Location"] = "Don Carlos (Tanaris; "..YELLOW.."53.8, 28.8"..PREV..")";
+L["Quest_12513_Note"] = "Don Carlos' younger self walks along the main road that runs West and East.";
 L["Quest_12513_RewardText"] = WHITE.."1";
 
 -- [56] Karazhan
@@ -3254,6 +3262,7 @@ L["Quest_12616_Location"] = "Argent Dawn Emissary  (Capital Cities and Eastern P
 L["Quest_12616_Note"] = "This quest was only available during the Scourge Invasion Event in Late October and Early November of 2008.\n\nTo complete the quest, use the scrolls behind Prince Tenris Mirkblood, who is in the Servants Chambers above Attumen the Huntsmen ("..YELLOW.."[5]"..WHITE.."). As with opening a chest, if another player is using the scrolls your quest might not complete. Try again until it does.";
 L["Quest_12616_RewardText"] = WHITE.."1";
 
+-- [57] The Arcatraz
 L["Quest_10882_Name"] = "Harbinger of Doom";
 L["Quest_10882_Objective"] = "You have been tasked to go to Tempest Keep's Arcatraz satellite and slay Harbinger Skyriss. Return to A'dal at the Terace of Light in Shattrath City after you have done so.";
 L["Quest_10882_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."53,43"..WHITE..")";
@@ -3289,6 +3298,7 @@ L["Quest_11389_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower Cit
 L["Quest_11389_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
 L["Quest_11389_RewardText"] = WHITE.."1";
 
+-- [58] The Botanica
 L["Quest_10704_Name"] = "How to Break Into the Arcatraz";
 L["Quest_10704_Objective"] = "A'dal has tasked you with the recovery of the Top and Bottom Shards of the Arcatraz Key. Return them to him, and he will fashion them into the Key to the Arcatraz for you.";
 L["Quest_10704_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."53,43"..WHITE..")";
@@ -3323,6 +3333,7 @@ L["Quest_11385_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower Cit
 L["Quest_11385_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
 L["Quest_11385_RewardText"] = WHITE.."1";
 
+-- [59] The Mechanar
 L["Quest_10665_Name"] = "Fresh from the Mechanar";
 L["Quest_10665_Objective"] = "David Wayne at Wayne's Retreat wants you to bring him an Overcharged Manacell.";
 L["Quest_10665_Location"] = "David Wayne (Terokkar Forest - Wayne's Refuge; "..YELLOW.."78,39"..WHITE..").";
@@ -3342,6 +3353,7 @@ L["Quest_11387_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower Cit
 L["Quest_11387_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
 L["Quest_11387_RewardText"] = WHITE.."1";
 
+-- [60] Eye of the Storm
 L["Quest_11337_Name"] = "Call to Arms: Eye of the Storm";
 L["Quest_11337_Objective"] = "Win an Eye of the Storm battleground match and return to an Alliance Brigadier General at any Alliance capital city or Shattrath.";
 L["Quest_11337_Location"] = "Alliance Brigadier General:\n   Shattrath: Lower City - "..YELLOW.."66.6, 34.6"..WHITE.."\n   Stormwind: Stormwind Keep - "..YELLOW.."79.4, 18.0"..WHITE.."\n   Ironforge: Military Ward - "..YELLOW.."69.8, 90.0"..WHITE.."\n   Darnassus: Warrior's Terrace - "..YELLOW.."57.8, 34.6"..WHITE.."\n   Exodar: The Vault of Lights - "..YELLOW.."24.6, 55.4";
@@ -3354,6 +3366,7 @@ L["Quest_11341_Location"] = "Horde Warbringer:\n   Shattrath: Lower City - "..YE
 L["Quest_11341_Note"] = "This quest can be done once a day after reaching level 61. It yields varying amounts of experience and gold based on your level.";
 L["Quest_11341_RewardText"] = AQ_NONE;
 
+-- [61] Tempest Keep
 L["Quest_10946_Name"] = "Ruse of the Ashtongue";
 L["Quest_10946_Objective"] = "Travel into Tempest Keep and slay Al'ar while wearing the Ashtongue Cowl. Return to Akama in Shadowmoon Valley once you've completed this task.";
 L["Quest_10946_Location"] = "Akama (Shadowmoon Valley - Warden's Cage; "..YELLOW.."58,48"..WHITE..")";
@@ -3371,7 +3384,7 @@ L["Quest_11007_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..
 -- [62] Black Temple
 L["Quest_10958_Name"] = "Seek Out the Ashtongue";
 L["Quest_10958_Objective"] = "Find Akama's Deathsworn inside the Black Temple.";
-L["Quest_10958_Location"] = "Xi'ri (Shadowmoon Valley; "..YELLOW.."65,44"..WHITE..").";
+L["Quest_10958_Location"] = "Xi'ri (Shadowmoon Valley; "..YELLOW.."65.2, 44.0"..PREV..")";
 L["Quest_10958_Note"] = "Spirit of Olum is up and to your left once you enter the Black Temple at "..YELLOW.."[1]"..WHITE..". He will teleport you to Seer Kanai once you've High Warlord Naj'entus at "..YELLOW.."[2]"..WHITE.." and Supremus at "..YELLOW.."[3]"..WHITE..".";
 L["Quest_10958_RewardText"] = AQ_NONE;
 L["Quest_10958_PreQuest"] = "The Secret Compromised -> A Distraction for Akama";
@@ -3379,7 +3392,7 @@ L["Quest_10958_FollowQuest"] = "Redemption of the Ashtongue";
 
 L["Quest_10957_Name"] = "Redemption of the Ashtongue";
 L["Quest_10957_Objective"] = "Help Akama wrest control back of his soul by defeating the Shade of Akama inside the Black Temple. Return to Seer Kanai when you've completed this task.";
-L["Quest_10957_Location"] = "Seer Kanai (Black Temple; "..YELLOW.."[5]"..WHITE..").";
+L["Quest_10957_Location"] = "Seer Kanai (Black Temple; "..YELLOW.."[5]"..WHITE..")";
 L["Quest_10957_Note"] = "Shade of Akama is at "..YELLOW.."[4]"..WHITE..".";
 L["Quest_10957_RewardText"] = AQ_NONE;
 L["Quest_10957_PreQuest"] = "Seek Out the Ashtongue";
@@ -3387,7 +3400,7 @@ L["Quest_10957_FollowQuest"] = "The Fall of the Betrayer";
 
 L["Quest_10959_Name"] = "The Fall of the Betrayer";
 L["Quest_10959_Objective"] = "Seer Kanai wants you to defeat Illidan inside the Black Temple.";
-L["Quest_10959_Location"] = "Seer Kanai (Black Temple; "..YELLOW.."[5]"..WHITE..").";
+L["Quest_10959_Location"] = "Seer Kanai (Black Temple; "..YELLOW.."[5]"..WHITE..")";
 L["Quest_10959_Note"] = "Illidan Stormrage is at "..YELLOW.."[11]"..WHITE..".";
 L["Quest_10959_RewardText"] = WHITE.."1";
 L["Quest_10959_PreQuest"] = "Redemption of the Ashtongue";
@@ -3452,7 +3465,7 @@ L["Quest_11163_Note"] = "";
 L["Quest_11163_RewardText"] = WHITE.."1(x10)";
 L["Quest_11163_PreQuest"] = "Blood of the Warlord";
 
--- [65] Skettis
+-- [65] Skettis			11098, 11008, 11085, 11093, 11004, 11005, 11021, 11024, 11028, 11056, 11029, 11885, 11073
 L["Quest_11098_Name"] = "To Skettis!";
 L["Quest_11098_Objective"] = "Take the Explosives Package to Sky Sergeant Doryn at Blackwind Landing outside Skettis.";
 L["Quest_11098_Location"] = "Yuula (Shattrath City; "..YELLOW.."65,42"..WHITE..")";
@@ -3547,18 +3560,6 @@ L["Quest_11073_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..
 L["Quest_11073_PreQuest"] = "Adversarial Blood";
 
 -- [67] Magisters' Terrace
-L["Quest_11500_Name"] = "Wanted: Sisters of Torment";
-L["Quest_11500_Objective"] = "Nether-Stalker Mah'duun wants you to slay 4 Sisters of Torment. Return to him in Shattrath's Lower City once you have done so in order to collect the bounty.";
-L["Quest_11500_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower City; "..YELLOW.."75.2, 37.6"..WHITE..")";
-L["Quest_11500_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
-L["Quest_11500_RewardText"] = WHITE.."1";
-
-L["Quest_11499_Name"] = "Wanted: The Signet Ring of Prince Kael'thas";
-L["Quest_11499_Objective"] = "Wind Trader Zhareem has asked you to obtain The Signet Ring of Prince Kael'thas. Deliver it to him in Shattrath's Lower City to collect the reward.";
-L["Quest_11499_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 36.8"..WHITE..")";
-L["Quest_11499_Note"] = "One of many Daily Quests that can be available each day from this NPC.  Requires Heroic Difficulty.\n\nPrince Kael'thas Sunstrider is at "..YELLOW.."[6]"..WHITE..".";
-L["Quest_11499_RewardText"] = WHITE.."1(x2)";
-
 L["Quest_11488_Name"] = "Magisters' Terrace";
 L["Quest_11488_Objective"] = "Exarch Larethor at the Shattered Sun Staging Area wants you to search Magisters' Terrace and find Tyrith, a blood elf spy.";
 L["Quest_11488_Location"] = "Exarch Larethor (Isle of Quel'Danas - Shattered Sun Staging Area; "..YELLOW.."47,31"..WHITE..")";
@@ -3581,6 +3582,18 @@ L["Quest_11492_Location"] = "Kalecgos (Magisters' Terrace; "..YELLOW.."[4]"..WHI
 L["Quest_11492_Note"] = "Prince Kael'thas Sunstrider is at "..YELLOW.."[6]"..WHITE..". Completing this quest also enables you to do Magisters' Terrace on Heroic mode.\n\nLarethor is at (Isle of Quel'Danas - Shattered Sun Staging Area; "..YELLOW.."47,31"..WHITE..").";
 L["Quest_11492_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3";
 L["Quest_11492_PreQuest"] = "The Scryer's Scryer";
+
+L["Quest_11500_Name"] = "Wanted: Sisters of Torment";
+L["Quest_11500_Objective"] = "Nether-Stalker Mah'duun wants you to slay 4 Sisters of Torment. Return to him in Shattrath's Lower City once you have done so in order to collect the bounty.";
+L["Quest_11500_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower City; "..YELLOW.."75.2, 37.6"..WHITE..")";
+L["Quest_11500_Note"] = "One of many Daily Quests that can be available each day from this NPC.  It can be completed on any difficulty.";
+L["Quest_11500_RewardText"] = WHITE.."1";
+
+L["Quest_11499_Name"] = "Wanted: The Signet Ring of Prince Kael'thas";
+L["Quest_11499_Objective"] = "Wind Trader Zhareem has asked you to obtain The Signet Ring of Prince Kael'thas. Deliver it to him in Shattrath's Lower City to collect the reward.";
+L["Quest_11499_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 36.8"..WHITE..")";
+L["Quest_11499_Note"] = dailyHeroic.."\n\nPrince Kael'thas Sunstrider is at "..YELLOW.."[6]"..WHITE..".";
+L["Quest_11499_RewardText"] = WHITE.."1(x2)";
 
 -------------------------------------------
 -- Wrath of the Lich King Classic Quests --
@@ -6070,6 +6083,7 @@ L["Quest_10885_Objective"] = "A'dal in Shattrath City wants you to recover Kalit
 L["Quest_10885_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."54.6, 44.6"..WHITE..")";
 L["Quest_10885_Note"] = "Requires Heroic Dungeon Difficulty. Murmur is at "..YELLOW.."[4]"..WHITE..". Kalithresh's Trident comes from The Steamvault.";
 L["Quest_10885_RewardText"] = AQ_NONE;
+L["Quest_10885_PreQuest"] = "The Hand of Gul'dan -> The Cipher of Damnation";
 
 L["Quest_10667_Name"] = "Underworld Loam";
 L["Quest_10667_Objective"] = "Get a Vial of Underworld Loam from Hydromancer Thespia and bring it to David Wayne at Wayne's Refuge.";
@@ -6084,12 +6098,6 @@ L["Quest_11371_Objective"] = "Nether-Stalker Mah'duun has asked you to slay 14 C
 L["Quest_11371_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower City; "..YELLOW.."75.2, 37.6"..WHITE..")";
 L["Quest_11371_Note"] = "This is a daily quest.";
 L["Quest_11371_RewardText"] = WHITE.."1";
-
-L["Quest_11370_Name"] = "Wanted: The Warlord's Treatise";
-L["Quest_11370_Objective"] = "Wind Trader Zhareem has asked you to acquire The Warlord's Treatise. Deliver it to him in Shattrath's Lower City to collect the reward.";
-L["Quest_11370_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 37.0"..WHITE..")";
-L["Quest_11370_Note"] = "This daily quest can only be completed on Heroic difficulty.\n\nWarlord Kalithresh is at "..YELLOW.."[3]"..WHITE..".";
-L["Quest_11370_RewardText"] = AQ_NONE;
 
 L["Quest_29571_Name"] = "Defending the Wilds";
 L["Quest_29571_Objective"] = "Speak with Watcher Jhang in the Underbog.";
@@ -6145,7 +6153,7 @@ L["Quest_29595_FollowQuest"] = "The End of the Exarch";
 L["Quest_29596_Name"] = "The End of the Exarch";
 L["Quest_29596_Objective"] = "Kill Exarch Maladaar and return to the Draenei Spirit inside the Auchenai Crypts.";
 L["Quest_29596_Location"] = "Draenei Spirit (Auchenai Crypts; "..BLUE.."Entrance"..WHITE..")";
-L["Quest_29596_Note"] = "Exarch Maladaar is Located at "..YELLOW.."[2]"..WHITE..".";
+L["Quest_29596_Note"] = "Exarch Maladaar is located at "..YELLOW.."[2]"..WHITE..".";
 L["Quest_29596_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 L["Quest_29596_PreQuest"] = "Everything Will Be Alright";
 
@@ -6164,7 +6172,7 @@ L["Quest_29591_RewardText"] = AQ_NONE;
 L["Quest_10167_Name"] = "Auchindoun...";
 L["Quest_10167_Objective"] = "Travel to the Auchenai Crypts in the Bone Wastes of Terokkar Forest and slay Exarch Maladaar to free the spirit of D'ore.";
 L["Quest_10167_Location"] = "A'dal (Shattrath City - Terrace of Light; "..YELLOW.."54.6, 44.6"..WHITE..")";
-L["Quest_10167_Note"] = "Exarch Maladaar is Located at "..YELLOW.."[2]"..WHITE..". D'ore appears after Exarch Maladaar has been killed.";
+L["Quest_10167_Note"] = "Exarch Maladaar is located at "..YELLOW.."[2]"..WHITE..". D'ore appears after Exarch Maladaar has been killed.";
 L["Quest_10167_RewardText"] = AQ_NONE;
 L["Quest_10167_PreQuest"] = "A Visit With the Greatmother -> A Secret Revealed";
 L["Quest_10167_FollowQuest"] = "What The Soul Sees";
@@ -6238,12 +6246,6 @@ L["Quest_29606_Location"] = "Isfar (Sethekk Halls; "..BLUE.."Entrance"..WHITE.."
 L["Quest_29606_Note"] = "Terokk's Mask drops off Darkweaver Syth at "..YELLOW.."[1]"..WHITE.." and Terokk's Quill drops from Talon King Ikiss at "..YELLOW.."[3]"..WHITE..".";
 L["Quest_29606_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3";
 
-L["Quest_11372_Name"] = "Wanted: The Headfeathers of Ikiss";
-L["Quest_11372_Objective"] = "Wind Trader Zhareem has asked you to acquire The Headfeathers of Ikiss. Deliver them to him in Shattrath's Lower City to collect the reward.";
-L["Quest_11372_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 37.0"..WHITE..")";
-L["Quest_11372_Note"] = "This daily quest can only be completed on Heroic difficulty.\n\nTalon King Ikiss is at "..YELLOW.."[3]"..WHITE..".";
-L["Quest_11372_RewardText"] = AQ_NONE;
-
 L["Quest_29642_Name"] = "Trouble at Auchindoun";
 L["Quest_29642_Objective"] = "Report to Field Commander Mahfuun inside the Shadow Labyrinth at Auchindoun in Terokkar Forest.";
 L["Quest_29642_Location"] = "Spymistress Mehlisah Highcrown (Shattrath City - Terrace of Light; "..YELLOW.."50.4, 45.2"..WHITE..")";
@@ -6273,7 +6275,7 @@ L["Quest_29645_RewardText"] = AQ_NONE;
 L["Quest_10649_Name"] = "The Book of Fel Names";
 L["Quest_10649_Objective"] = "Venture inside the Shadow Labyrinth in Auchindoun and obtain the Book of Fel Names from Blackheart the Inciter. Return to Altruis in Nagrand once you've completed this task.";
 L["Quest_10649_Location"] = "Altruis the Sufferer (Nagrand; "..YELLOW.."27.2, 43.0"..WHITE..")";
-L["Quest_10649_Note"] = "Blackheart the Inciter is at "..YELLOW.."[2]"..WHITE..". This is the last part of a chain quest that starts in Shadowmoon Valley at "..YELLOW.."61.2, 29.2"..WHITE.." for Aldor and "..YELLOW.."55.8, 58.2"..WHITE.." for Scryer";
+L["Quest_10649_Note"] = "Blackheart the Inciter is at "..YELLOW.."[2]"..WHITE..". This is the last part of a chain quest that starts in Shadowmoon Valley at "..YELLOW.."61.2, 29.2"..WHITE.." for Aldor and "..YELLOW.."55.8, 58.2"..WHITE.." for Scryer.";
 L["Quest_10649_RewardText"] = AQ_NONE;
 L["Quest_10649_PreQuest"] = "Illidan's Pupil";
 L["Quest_10649_FollowQuest"] = "Return to the Aldor or Return to the Scryers";
@@ -6300,17 +6302,11 @@ L["Quest_10666_Note"] = "Grandmaster Vorpil is at "..YELLOW.."[3]"..WHITE..".";
 L["Quest_10666_RewardText"] = AQ_NONE;
 L["Quest_10666_PreQuest"] = "Additional Materials";
 
-L["Quest_11376_Name"] = "Wanted: Murmur's Whisper";
-L["Quest_11376_Objective"] = "Wind Trader Zhareem has asked you to obtain Murmur's Whisper. Deliver it to him in Shattrath's Lower City to collect the reward.";
-L["Quest_11376_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 37.0"..WHITE..")";
-L["Quest_11376_Note"] = "This daily quest can only be completed on Heroic difficulty.\n\nMurmur is at "..YELLOW.."[4]"..WHITE..".";
-L["Quest_11376_RewardText"] = AQ_NONE;
-
-L["Quest_11375_Name"] = "Wanted: Malicious Instructors";
-L["Quest_11375_Objective"] = "Nether-Stalker Mah'duun wants you to kill 3 Malicious Instructors. Return to him in Shattrath's Lower City once they all lie dead in order to collect the bounty.";
-L["Quest_11375_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower City; "..YELLOW.."75.2, 37.6"..WHITE..")";
-L["Quest_11375_Note"] = "This is a daily quest.";
-L["Quest_11375_RewardText"] = WHITE.."1";
+L["Quest_11376_Name"] = "WANTED: Malicious Instructors";
+L["Quest_11376_Objective"] = "Nether-Stalker Mah'duun wants you to kill 3 Malicious Instructors. Return to him in Shattrath's Lower City once they all lie dead in order to collect the bounty.";
+L["Quest_11376_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower City; "..YELLOW.."75.2, 37.6"..WHITE..")";
+L["Quest_11376_Note"] = "This is a daily quest.";
+L["Quest_11376_RewardText"] = WHITE.."1";
 
 L["Quest_13432_Name"] = "The Vials of Eternity";
 L["Quest_13432_Objective"] = "Soridormi at Caverns of Time wants you to retrieve Vashj's Vial Remnant from Lady Vashj at Coilfang Reservoir and Kael's Vial Remnant from Kael'thas Sunstrider at Tempest Keep.";
@@ -6382,12 +6378,6 @@ L["Quest_29599_Location"] = "Thrall (Old Hillsbrad Foothills; "..GREEN.."[1']"..
 L["Quest_29599_Note"] = "Make sure everyone accepts the quest before anyone tells Thrall to start. Reportedly, the quest can be shared and successfully completed, though. You get 20 tries at rescuing Thrall after that you'll have to reset the instance and you can't kill the last boss without him.";
 L["Quest_29599_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 L["Quest_29599_PreQuest"] = "Taretha's Diversion";
-
-L["Quest_11378_Name"] = "Wanted: The Epoch Hunter's Head";
-L["Quest_11378_Objective"] = "Wind Trader Zhareem has asked you to obtain the Epoch Hunter's Head. Deliver it to him in Shattrath's Lower City to collect the reward.";
-L["Quest_11378_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 37.0"..WHITE..")";
-L["Quest_11378_Note"] = "This daily quest can only be completed on Heroic difficulty.\n\nEpoch Hunter is at "..YELLOW.."[3]"..WHITE..".";
-L["Quest_11378_RewardText"] = AQ_NONE;
 
 L["Quest_12513_Name"] = "Nice Hat...";
 L["Quest_12513_Objective"] = "Don Carlos has inadvertently challenged you to defeat his younger self in Old Hillsbrad. Afterwards, bring Don Carlos' Hat to him in Tanaris as proof.";
@@ -6633,12 +6623,6 @@ L["Quest_11500_Objective"] = "Nether-Stalker Mah'duun wants you to slay 4 Sister
 L["Quest_11500_Location"] = "Nether-Stalker Mah'duun (Shattrath City - Lower City; "..YELLOW.."75.2, 37.6"..WHITE..")";
 L["Quest_11500_Note"] = "This is a daily quest.";
 L["Quest_11500_RewardText"] = WHITE.."1";
-
-L["Quest_11499_Name"] = "Wanted: The Signet Ring of Prince Kael'thas";
-L["Quest_11499_Objective"] = "Wind Trader Zhareem has asked you to obtain The Signet Ring of Prince Kael'thas. Deliver it to him in Shattrath's Lower City to collect the reward.";
-L["Quest_11499_Location"] = "Wind Trader Zhareem (Shattrath City - Lower City; "..YELLOW.."75.0, 37.0"..WHITE..")";
-L["Quest_11499_Note"] = "This daily quest can only be completed on Heroic difficulty.\n\nPrince Kael'thas Sunstrider is at "..YELLOW.."[4]"..WHITE..".";
-L["Quest_11499_RewardText"] = AQ_NONE;
 
 L["Quest_24553_Name"] = "The Purification of Quel'Delar";
 L["Quest_24553_Objective"] = "Immerse your Tempered Quel'Delar in the Sunwell. Speak to a Warden of the Sunwell when you are ready to enter the Sunwell Plateau.";
@@ -10264,7 +10248,7 @@ L["Quest_58798_Name"] = "The Spires of Ascension";
 L["Quest_58798_Objective"] = "Kill Devos, Paragon of Doubt in the Spires of Ascension.";
 L["Quest_58798_Location"] = "Kleia (Bastion - Elysian Hold; "..YELLOW.."66.4, 16.6"..WHITE..")";
 L["Quest_58798_Note"] = "Part of the Kyrian Convenant story questline.  Devos is the final boss in the dungeon.";
-L["Quest_58798_RewardText"] = WHITE.."1"..AQ_AND..AQ_RENOWN;
+L["Quest_58798_RewardText"] = WHITE.."1";
 L["Quest_58798_PreQuest"] = "Trial of Ascension -> Forged by Trial";
 
 L["Quest_60243_Name"] = "Trading Favors: Sanguine Depths";
