@@ -19,12 +19,20 @@
 		"scope": "lua",
 		"prefix": "quest",
 		"body": [
-			"L[\"Quest_${0}_Name\"] = \"\";",
-			"L[\"Quest_${0}_Objective\"] = \"\";",
-			"L[\"Quest_${0}_Location\"] = \"\";",
-			"L[\"Quest_${0}_Note\"] = \"\";",
-			"L[\"Quest_${0}_RewardText\"] = \"\";"
+			"L[\"Quest_${0}_Name\"] = \"\"",
+			"L[\"Quest_${0}_Objective\"] = \"\"",
+			"L[\"Quest_${0}_Location\"] = \"\"",
+			"L[\"Quest_${0}_Note\"] = \"\"",
+			"L[\"Quest_${0}_RewardText\"] = \"\""
 		],
 		"description": "Paste Quest Template"
+	},
+	"Activity ID": {
+		"scope": "lua",
+		"prefix": "activity",
+		"body": [
+			"ActivityID = { ${1}, ${2} },",
+		],
+		"description": "Paste Activity ID Template"
 	}
 }

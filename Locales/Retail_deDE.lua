@@ -15,9 +15,8 @@ local AQ_GARRISONRESOURCES = " Garnisonsressourcen"
 local AQ_APEXISCRYSTAL = " Apexiskristalle"
 local AQ_ORDERRESOURCES = " Ordensressourcen"
 local AQ_VEILEDARGUNITE = " Verschleierter Argunit"
-local AQ_AZERITE = " Azerit";
+local AQ_AZERITE = " Azerit"
 local AQ_CLASSREWARDS = WHITE.." Variiert für jede Klasse"
-local AQ_RENOWN = "Ruhm";
 local AQ_WORLDDUNGEONQUEST = "Dies ist eine Weltquest.  Wenn diese Aktiv ist (Du kannst das in der Map sehen ob diese aktiv ist), betrete die Instanz.  Wenn Du die Instanz beendest, wird die Quest automatisch abgeschlossen.  Diese Quest gibt Dir Rufbelohnung und manchmal auch ein Gegenstand."
 
 local onlyHeroic  = "Diese Quest kann nur auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden."
@@ -2129,7 +2128,6 @@ L["Quest_10296_Name"] = "Der schwarze Morast";
 L["Quest_10296_Objective"] = "Reist durch die Höhlen der Zeit in den schwarzen Morast während der Öffnung des Dunklen Portals und sprecht mit Sa'at.";
 L["Quest_10296_Location"] = "Andormu (Tanaris - Höhlen der Zeit; "..YELLOW.."58,54"..WHITE..")";
 L["Quest_10296_Note"] = "Die Flucht von der Burg Durnholde muss abgeschlossen sein, bevor man den schwarzen Morast betreten kann. Sa'at befindet sich kurz hinter dem Eingang der Instanz.";
-L["Quest_10296_RewardText"] = AQ_NONE;
 L["Quest_10296_FollowQuest"] = "Die Öffnung des Dunklen Portals";
 
 L["Quest_10297_Name"] = "Die Öffnung des Dunklen Portals";
@@ -2139,17 +2137,11 @@ L["Quest_10297_Note"] = "Wenn die Quest missglückt, muss das Ereignis von vorne
 L["Quest_10297_RewardText"] = WHITE.."1"..AQ_OR..WHITE.."2"..AQ_OR..WHITE.."3"..AQ_OR..WHITE.."4";
 L["Quest_10297_PreQuest"] = "Der schwarze Morast";
 
-L["Quest_11382_Name"] = "Gesucht: Aeonus' Stundenglas";
-L["Quest_11382_Objective"] = "Windhändler Zhareem hat Euch darum gebeten, ihm Aeonus' Stundenglas zu beschaffen. Bringt es zu ihm ins untere Viertel in Shattrath, um Eure Belohnung zu erhalten.";
-L["Quest_11382_Location"] = "Windhändler Zhareem (Shattrath - Unteres Viertel; "..YELLOW.."75.0,37.0"..WHITE..")";
-L["Quest_11382_Note"] = "Diese Aufgabe muss auf dem Schwierigkeitsgrad 'Heroisch' abgeschlossen werden.\n\nAeonus erscheint mit der letzten Welle.";
-L["Quest_11382_RewardText"] = AQ_NONE;
-
-L["Quest_11383_Name"] = "Gesucht: Fürsten der Zeitenrisse";
+L["Quest_11383_Name"] = "GESUCHT: Fürsten der Zeitenrisse";
 L["Quest_11383_Objective"] = "Netherpirscher Mah'duun hat Euch damit beauftragt, 4 Fürsten der Zeitenrisse zu töten. Kehrt erst zu ihm in das untere Viertel in Shattrath zurück, wenn sie alle dem Tod überantwortet wurden.";
 L["Quest_11383_Location"] = "Netherpirscher Mah'duun (Shattrath - Unteres Viertel; "..YELLOW.."75.2, 37.6"..WHITE..")";
 L["Quest_11383_Note"] = "Dies ist eine Tagesquest.";
-L["Quest_11383_RewardText"] = WHITE.."1";
+L["Quest_11383_RewardText"] = "1";
 
 L["Quest_10947_Name"] = "Ein Artefakt aus der Vergangenheit";
 L["Quest_10947_Objective"] = "Reist zu den Höhlen der Zeit in Tanaris und verschafft Euch Zugang zur Schlacht um den Berg Hyjal. Habt Ihr dies geschafft, so bezwingt Furor Winterfrost und bringt das befristete Phylakterium zu Akama im Schattenmondtal.";
@@ -6052,7 +6044,7 @@ L["Quest_58798_Name"] = "The Spires of Ascension";
 L["Quest_58798_Objective"] = "Kill Devos, Paragon of Doubt in the Spires of Ascension.";
 L["Quest_58798_Location"] = "Kleia (Bastion - Elysian Hold; "..YELLOW.."66.4, 16.6"..WHITE..")";
 L["Quest_58798_Note"] = "Part of the Kyrian Convenant story questline.  Devos is the final boss in the dungeon.";
-L["Quest_58798_RewardText"] = WHITE.."1"..AQ_AND..AQ_RENOWN;
+L["Quest_58798_RewardText"] = WHITE.."1";
 L["Quest_58798_PreQuest"] = "Trial of Ascension -> Forged by Trial";
 L["Quest_58798_FollowQuest"] = "None";
 
